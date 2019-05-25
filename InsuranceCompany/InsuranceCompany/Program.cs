@@ -17,6 +17,12 @@ namespace InsuranceCompany
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            Employee oleg = new Employee();
+            Category category = new Category();
+            Individual sasha = new Individual();
+
+            IncurencePolicy incurencePolicy = new IncurencePolicy(0, oleg, category, sasha, new DateTime(), new DateTime(), 15, 1500, 6);
         }
     }
 }

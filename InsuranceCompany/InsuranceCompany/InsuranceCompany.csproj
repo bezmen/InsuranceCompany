@@ -48,8 +48,9 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="Individual.cs" />
+    <Compile Include="EntityClient.cs" />
+    <Compile Include="IClientable.cs" />
+    <Compile Include="IndividualClient.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

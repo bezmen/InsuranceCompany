@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    class Client
+    class Company : 
+
+
+
+
+
+       
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    class Entity : IClientable
+    interface IClientable
     {
     }
 }

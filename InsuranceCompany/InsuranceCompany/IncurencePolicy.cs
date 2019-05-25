@@ -11,7 +11,7 @@ namespace InsuranceCompany
         public int Number { get; set; }
         public Employee Employee { get; set; }
         public Category Category { get; set; }
-        public IClientable Client { get; set; }
+        public Client Client { get; set; }
         public DateTime DateOfConclusion { get; set; }
         public DateTime TermOfImprisonment { get; set; }
         public decimal Sum { get; set; }

@@ -50,14 +50,12 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Individual.cs" />
-    <Compile Include="Company.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IClientable.cs" />
     <Compile Include="IncurencePolicy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

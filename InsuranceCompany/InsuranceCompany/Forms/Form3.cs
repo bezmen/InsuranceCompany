@@ -138,6 +138,7 @@ namespace InsuranceCompany.Forms
                 this.checkBoxFemale.TabIndex = 14;
                 this.checkBoxFemale.Text = "Женщина";
                 this.checkBoxFemale.UseVisualStyleBackColor = true;
+                this.checkBoxFemale.Click += new EventHandler(cbClick);
                 // 
                 // checkBoxMale
                 // 
@@ -148,6 +149,7 @@ namespace InsuranceCompany.Forms
                 this.checkBoxMale.TabIndex = 13;
                 this.checkBoxMale.Text = "Мужчина";
                 this.checkBoxMale.UseVisualStyleBackColor = true;
+                this.checkBoxMale.Click += new EventHandler(cbClick);
 
                 this.Controls.Add(this.checkBoxFemale);
                 this.Controls.Add(this.checkBoxMale);
@@ -330,6 +332,20 @@ namespace InsuranceCompany.Forms
             this.Controls.Remove(textBoxAddres);
             this.Controls.Remove(labelTelephon);
             this.Controls.Remove(textBoxTelephon);
+        }
+
+        private void cbClick(object sender, EventArgs e)
+        {
+            checkBoxFemale.Checked = false;
+            checkBoxMale.Checked = false;
+            (sender as CheckBox).Checked = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 startForm = new Form2();
+            startForm.ShowDialog();
+            this.Hide();
         }
     }
 }

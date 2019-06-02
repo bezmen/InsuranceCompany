@@ -18,7 +18,7 @@ namespace InsuranceCompany
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            Employee oleg = new Employee();
+            Employee oleg = new Employee("Oleg");
             Category category = new Category();
             IndividualClient sasha = new IndividualClient();
 

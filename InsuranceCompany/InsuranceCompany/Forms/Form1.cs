@@ -17,8 +17,6 @@ namespace InsuranceCompany
         {
             InitializeComponent();
 
-            // Create columns for the items and subitems.
-            // Width of -2 indicates auto-size.
             listView1.Columns.Add("ФИО", -2, HorizontalAlignment.Left);
             listView1.Columns.Add("Тип", -2, HorizontalAlignment.Center);
             listView1.Columns.Add("Адрес", -2, HorizontalAlignment.Center);

@@ -33,6 +33,16 @@
             this.radioButtonEntity = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(134, 336);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // radioButtonIndivid
             // 
             this.radioButtonIndivid.AutoSize = true;
@@ -56,15 +66,6 @@
             this.radioButtonEntity.Text = "Юр. лицо";
             this.radioButtonEntity.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(134, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +77,7 @@
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

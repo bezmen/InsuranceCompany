@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    enum TypeClient
+    class IndividualClient : Client
     {
-        Individual, // физ лицо
-        Entity // юр лицо
-    }
-
-    class IndividualClient : IClientable
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Otchestvo { get; set; }
-        public DateTime Birthday { get; set; }
-        public bool Sex { get; set; }
-        public int StoolDryving { get; set; }
+        public string Name { get; set; }
+        public DateTime Birthday { get; }
+        public bool Sex { get; }
+        public int StoolDryving { get; }
         public string Address { get; set; }
         public string NumberOfTelephone { get; set; }
 
         public IndividualClient()
         {
 
+        }
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

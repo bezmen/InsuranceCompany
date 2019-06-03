@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    enum MyEnum
-    {
-    }
-    class IncurencePolicy
+    public class IncurencePolicy
     {
         public int Number { get; set; }
         public Employee Employee { get; set; }

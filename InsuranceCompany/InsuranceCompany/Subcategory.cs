@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    public class Category
+    public class Subcategory
     {
-        public string Name { get; }
+        public string Name { get; set; }
 
-        public Category(string name)
+        public Subcategory(string name)
         {
             Name = name;
         }
     }
 }
+   

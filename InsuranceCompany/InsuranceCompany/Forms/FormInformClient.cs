@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany.Forms
 {
-    public partial class Form3 : Form
+    public partial class FormInformClient : Form
     {
-        public Form3()
+        List<Client> clients;
+        public FormInformClient(List<Client> clients)
         {
             InitializeComponent();
+            this.clients = clients;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -343,7 +345,7 @@ namespace InsuranceCompany.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 startForm = new Form2();
+            FormPolicy startForm = new FormPolicy(clients);
             startForm.ShowDialog();
             this.Hide();
         }

@@ -11,9 +11,13 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany
 {
-    public partial class Form1 : Form
+    public partial class FormAllClients : Form
     {
-        public Form1()
+        Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
+        List<Client> clients = new List<Client>();
+        List<Employee> employees = new List<Employee>();
+
+        public FormAllClients()
         {
             InitializeComponent();
 
@@ -25,7 +29,7 @@ namespace InsuranceCompany
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 startForm = new Form3();
+            FormInformClient startForm = new FormInformClient(clients);
             startForm.ShowDialog();
             ListViewItem item1 = new ListViewItem("item1", 0);
             listView1.FullRowSelect = true;
@@ -33,6 +37,18 @@ namespace InsuranceCompany
             item1.SubItems.Add("Type");
             item1.SubItems.Add("Address");
             listView1.Items.Add(item1);
+        }
+
+        private void buttonAddNewCategory_Click(object sender, EventArgs e)
+        {
+            FormAddNewCategory startForm = new FormAddNewCategory();
+            startForm.ShowDialog();
+        }
+
+        private void buttonAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            FormAddNewEmployee startForm = new FormAddNewEmployee(employees);
+            startForm.ShowDialog();
         }
     }
 }

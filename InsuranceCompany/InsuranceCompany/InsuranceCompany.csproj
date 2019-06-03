@@ -50,36 +50,55 @@
     <Compile Include="Client.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntityClient.cs" />
-    <Compile Include="Forms\Form2.cs">
+    <Compile Include="Forms\FormAddNewCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Forms\FormAddNewCategory.Designer.cs">
+      <DependentUpon>FormAddNewCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form3.cs">
+    <Compile Include="Forms\FormAddNewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Forms\FormAddNewEmployee.Designer.cs">
+      <DependentUpon>FormAddNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPolicy.Designer.cs">
+      <DependentUpon>FormPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInformClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInformClient.Designer.cs">
+      <DependentUpon>FormInformClient.cs</DependentUpon>
     </Compile>
     <Compile Include="IndividualClient.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\FormAllClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FormAllClients.Designer.cs">
+      <DependentUpon>FormAllClients.cs</DependentUpon>
     </Compile>
     <Compile Include="IncurencePolicy.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Subcategory.cs" />
+    <EmbeddedResource Include="Forms\FormAddNewCategory.resx">
+      <DependentUpon>FormAddNewCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAddNewEmployee.resx">
+      <DependentUpon>FormAddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAllClients.resx">
+      <DependentUpon>FormAllClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPolicy.resx">
+      <DependentUpon>FormPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInformClient.resx">
+      <DependentUpon>FormInformClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

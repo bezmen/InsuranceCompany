@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany.Forms
 {
-    public partial class Form2 : Form
+    public partial class FormPolicy : Form
     {
-        public Form2()
+        List<Client> clients;
+        public FormPolicy(List<Client> clients)
         {
             InitializeComponent();
+            this.clients = clients;
+        }
+
+        private void buttonConclude_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

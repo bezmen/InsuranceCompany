@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    class IndividualClient : Client
+    public class IndividualClient : Client
     {
         public string Name { get; set; }
         public DateTime Birthday { get; }

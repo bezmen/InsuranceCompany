@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    class EntityClient : Client
+    public class EntityClient : Client
     {
         public string NameCompany { get; }
         public int UTN { get; } // УНН

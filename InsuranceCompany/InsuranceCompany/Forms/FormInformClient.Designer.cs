@@ -1,6 +1,6 @@
 ﻿namespace InsuranceCompany.Forms
 {
-    partial class Form3
+    partial class FormInformClient
     {
         /// <summary>
         /// Required designer variable.

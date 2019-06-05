@@ -13,10 +13,15 @@ namespace InsuranceCompany.Forms
     public partial class FormInformClient : Form
     {
         List<Client> clients;
-        public FormInformClient(List<Client> clients)
+        List<Employee> employees;
+        FormAllClients main;
+
+        public FormInformClient(List<Client> clients, List<Employee> employees, FormAllClients main)
         {
             InitializeComponent();
             this.clients = clients;
+            this.employees = employees;
+            this.main = main;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -24,6 +29,7 @@ namespace InsuranceCompany.Forms
             if (radioButtonIndivid.Checked == true)
             {
                 removeEntityComponents();
+
                 #region Individ componets
 
                 this.labelFIO = new System.Windows.Forms.Label();
@@ -345,9 +351,32 @@ namespace InsuranceCompany.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormPolicy startForm = new FormPolicy(clients);
-            startForm.ShowDialog();
-            this.Hide();
+            if (radioButtonIndivid.Checked)
+            {
+                IndividualClient client = new IndividualClient(
+                    textBoxFIO.Text,
+                    dateTimePickerBirthday.Value,
+                    checkBoxMale.Checked,
+                    Convert.ToInt32(textBoxStoolDryving.Text),
+                    textBoxAddress.Text,
+                    textBoxTelephone.Text
+                    );
+                clients.Add(client);
+            }
+            else
+            {
+                EntityClient client = new EntityClient(
+                    textBoxNameCompany.Text,
+                    Convert.ToInt32(textBoxUTN.Text),
+                    textBoxFIO_Director.Text,
+                    textBoxFIO_ChiefAccountant.Text,
+                    textBoxAddres.Text,
+                    textBoxTelephon.Text
+                    );
+                clients.Add(client);
+            }
+            FormPolicy startForm = new FormPolicy(clients, employees, main);
+            startForm.Show();
         }
     }
 }

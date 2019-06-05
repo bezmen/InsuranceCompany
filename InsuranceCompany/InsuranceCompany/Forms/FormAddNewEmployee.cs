@@ -17,6 +17,7 @@ namespace InsuranceCompany.Forms
         {
             this.employees = employees;
             InitializeComponent();
+            
         }
 
         private void Add_Click(object sender, EventArgs e)

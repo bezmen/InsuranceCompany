@@ -25,18 +25,14 @@ namespace InsuranceCompany
             listView1.Columns.Add("Тип", -2, HorizontalAlignment.Center);
             listView1.Columns.Add("Адрес", -2, HorizontalAlignment.Center);
             listView1.Columns.Add("Суммарные выплаты", -2, HorizontalAlignment.Left);
+            listView1.FullRowSelect = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormInformClient startForm = new FormInformClient(clients);
+            FormAllClients main = this;
+            FormInformClient startForm = new FormInformClient(clients, employees, main);
             startForm.ShowDialog();
-            ListViewItem item1 = new ListViewItem("item1", 0);
-            listView1.FullRowSelect = true;
-            item1.SubItems.Add("Name");
-            item1.SubItems.Add("Type");
-            item1.SubItems.Add("Address");
-            listView1.Items.Add(item1);
         }
 
         private void buttonAddNewCategory_Click(object sender, EventArgs e)

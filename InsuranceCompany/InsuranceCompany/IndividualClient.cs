@@ -15,13 +15,19 @@ namespace InsuranceCompany
         public string Address { get; set; }
         public string NumberOfTelephone { get; set; }
 
-        public IndividualClient()
+        public IndividualClient(string name, DateTime birth, bool sex, int stoolDriv, string address, string number)
         {
-
+            Name = name;
+            Birthday = birth;
+            Sex = sex;
+            StoolDryving = stoolDriv;
+            Address = address;
+            NumberOfTelephone = number;
         }
+
         public override string ToString()
         {
-            return base.ToString();
+            return Name;
         }
     }
 }

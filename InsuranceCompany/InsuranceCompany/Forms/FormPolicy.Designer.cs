@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNumPolicy = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,16 +37,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxClient = new System.Windows.Forms.TextBox();
+            this.textBoxSumPolicy = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerConclude = new System.Windows.Forms.DateTimePicker();
+            this.textBoxCostPolicy = new System.Windows.Forms.TextBox();
+            this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.buttonConclude = new System.Windows.Forms.Button();
+            this.comboBoxPaymentTerm = new System.Windows.Forms.ComboBox();
+            this.comboBoxTerm = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,12 +58,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Категория полиса";
             // 
-            // textBox1
+            // textBoxNumPolicy
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxNumPolicy.Location = new System.Drawing.Point(166, 17);
+            this.textBoxNumPolicy.Name = "textBoxNumPolicy";
+            this.textBoxNumPolicy.Size = new System.Drawing.Size(120, 20);
+            this.textBoxNumPolicy.TabIndex = 3;
             // 
             // label3
             // 
@@ -128,26 +128,19 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Ведущий страховой полис";
             // 
-            // textBox2
+            // textBoxClient
             // 
-            this.textBox2.Location = new System.Drawing.Point(166, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 12;
+            this.textBoxClient.Location = new System.Drawing.Point(166, 49);
+            this.textBoxClient.Name = "textBoxClient";
+            this.textBoxClient.Size = new System.Drawing.Size(120, 20);
+            this.textBoxClient.TabIndex = 12;
             // 
-            // textBox3
+            // textBoxSumPolicy
             // 
-            this.textBox3.Location = new System.Drawing.Point(166, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 13;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(166, 175);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 14;
+            this.textBoxSumPolicy.Location = new System.Drawing.Point(166, 175);
+            this.textBoxSumPolicy.Name = "textBoxSumPolicy";
+            this.textBoxSumPolicy.Size = new System.Drawing.Size(120, 20);
+            this.textBoxSumPolicy.TabIndex = 14;
             // 
             // label2
             // 
@@ -158,42 +151,35 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Клиент";
             // 
-            // comboBox1
+            // comboBoxCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(165, 79);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCategory.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dateTimePickerConclude
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dateTimePickerConclude.Location = new System.Drawing.Point(165, 112);
+            this.dateTimePickerConclude.Name = "dateTimePickerConclude";
+            this.dateTimePickerConclude.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePickerConclude.TabIndex = 16;
             // 
-            // textBox5
+            // textBoxCostPolicy
             // 
-            this.textBox5.Location = new System.Drawing.Point(165, 206);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 17;
+            this.textBoxCostPolicy.Location = new System.Drawing.Point(165, 206);
+            this.textBoxCostPolicy.Name = "textBoxCostPolicy";
+            this.textBoxCostPolicy.Size = new System.Drawing.Size(120, 20);
+            this.textBoxCostPolicy.TabIndex = 17;
             // 
-            // textBox6
+            // comboBoxEmployee
             // 
-            this.textBox6.Location = new System.Drawing.Point(165, 241);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 18;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(164, 276);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 19;
+            this.comboBoxEmployee.FormattingEnabled = true;
+            this.comboBoxEmployee.Location = new System.Drawing.Point(164, 276);
+            this.comboBoxEmployee.Name = "comboBoxEmployee";
+            this.comboBoxEmployee.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEmployee.TabIndex = 19;
             // 
             // buttonConclude
             // 
@@ -205,20 +191,36 @@
             this.buttonConclude.UseVisualStyleBackColor = true;
             this.buttonConclude.Click += new System.EventHandler(this.buttonConclude_Click);
             // 
+            // comboBoxPaymentTerm
+            // 
+            this.comboBoxPaymentTerm.FormattingEnabled = true;
+            this.comboBoxPaymentTerm.Location = new System.Drawing.Point(164, 240);
+            this.comboBoxPaymentTerm.Name = "comboBoxPaymentTerm";
+            this.comboBoxPaymentTerm.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPaymentTerm.TabIndex = 23;
+            // 
+            // comboBoxTerm
+            // 
+            this.comboBoxTerm.FormattingEnabled = true;
+            this.comboBoxTerm.Location = new System.Drawing.Point(166, 142);
+            this.comboBoxTerm.Name = "comboBoxTerm";
+            this.comboBoxTerm.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTerm.TabIndex = 24;
+            // 
             // FormPolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 362);
+            this.Controls.Add(this.comboBoxTerm);
+            this.Controls.Add(this.comboBoxPaymentTerm);
             this.Controls.Add(this.buttonConclude);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.comboBoxEmployee);
+            this.Controls.Add(this.textBoxCostPolicy);
+            this.Controls.Add(this.dateTimePickerConclude);
+            this.Controls.Add(this.comboBoxCategory);
+            this.Controls.Add(this.textBoxSumPolicy);
+            this.Controls.Add(this.textBoxClient);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -227,7 +229,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNumPolicy);
             this.Controls.Add(this.label1);
             this.Name = "FormPolicy";
             this.Text = "Form2";
@@ -238,7 +240,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNumPolicy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -246,15 +248,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxClient;
+        private System.Windows.Forms.TextBox textBoxSumPolicy;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.DateTimePicker dateTimePickerConclude;
+        private System.Windows.Forms.TextBox textBoxCostPolicy;
+        private System.Windows.Forms.ComboBox comboBoxEmployee;
         private System.Windows.Forms.Button buttonConclude;
+        private System.Windows.Forms.ComboBox comboBoxPaymentTerm;
+        private System.Windows.Forms.ComboBox comboBoxTerm;
     }
 }

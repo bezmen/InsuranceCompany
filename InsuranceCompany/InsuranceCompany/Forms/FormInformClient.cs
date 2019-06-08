@@ -15,13 +15,15 @@ namespace InsuranceCompany.Forms
         List<Client> clients;
         List<Employee> employees;
         FormAllClients main;
+        Dictionary<Category, List<Subcategory>> dicCategoryes;
 
-        public FormInformClient(List<Client> clients, List<Employee> employees, FormAllClients main)
+        public FormInformClient(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategoreyes)
         {
             InitializeComponent();
             this.clients = clients;
             this.employees = employees;
             this.main = main;
+            this.dicCategoryes = dicCategoreyes;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -367,7 +369,7 @@ namespace InsuranceCompany.Forms
             {
                 EntityClient client = new EntityClient(
                     textBoxNameCompany.Text,
-                    Convert.ToInt32(textBoxUTN.Text),
+                    textBoxUTN.Text,
                     textBoxFIO_Director.Text,
                     textBoxFIO_ChiefAccountant.Text,
                     textBoxAddres.Text,
@@ -375,7 +377,7 @@ namespace InsuranceCompany.Forms
                     );
                 clients.Add(client);
             }
-            FormPolicy startForm = new FormPolicy(clients, employees, main);
+            FormPolicy startForm = new FormPolicy(clients, employees, main, dicCategoryes);
             startForm.Show();
         }
     }

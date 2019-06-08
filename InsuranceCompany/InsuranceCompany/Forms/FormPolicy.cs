@@ -15,17 +15,37 @@ namespace InsuranceCompany.Forms
         List<Client> clients;
         List<Employee> employees;
         FormAllClients main;
+        Dictionary<Category, List<Subcategory>> dicCategory;
 
-        public FormPolicy(List<Client> clients, List<Employee> employees, FormAllClients main)
+        public FormPolicy(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategory)
         {
             InitializeComponent();
+
             this.clients = clients;
             this.employees = employees;
             this.main = main;
+            this.dicCategory = dicCategory;
+
+            textBoxClient.Enabled = false;
+
+            foreach (var item in dicCategory)
+                comboBoxCategory.Items.Add(item.Key);
+
             foreach (var item in employees)
                 comboBoxEmployee.Items.Add(item);
-           // textBoxClient.Text = clients.Last();
-           // textBoxNumPolicy.Text =datebase ID;
+
+            if (clients.Last() is IndividualClient)
+            {
+                var client = clients.Last() as IndividualClient;
+                textBoxClient.Text = client.Name;
+            }
+            else if (clients.Last() is EntityClient)
+            {
+                var client = clients.Last() as EntityClient;
+                textBoxClient.Text = client.NameCompany;
+            }
+            // textBoxClient.Text = clients.Last();
+            // textBoxNumPolicy.Text =datebase ID;
         }
 
         private void buttonConclude_Click(object sender, EventArgs e)
@@ -46,6 +66,7 @@ namespace InsuranceCompany.Forms
                 item.SubItems.Add(client.Address);
                 main.listView1.Items.Add(item);
             }
+            this.Close();
         }
     }
 }

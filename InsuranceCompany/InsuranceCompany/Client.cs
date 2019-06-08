@@ -8,5 +8,6 @@ namespace InsuranceCompany
 {
     public class Client
     {
+        public List<IncurencePolicy> Policies { get; set; }
     }
 }

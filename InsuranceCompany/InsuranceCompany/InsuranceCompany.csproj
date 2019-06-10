@@ -62,6 +62,12 @@
     <Compile Include="Forms\FormAddNewEmployee.Designer.cs">
       <DependentUpon>FormAddNewEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddNewSubcategoty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewSubcategoty.Designer.cs">
+      <DependentUpon>FormAddNewSubcategoty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPolicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,18 @@
     </Compile>
     <Compile Include="Forms\FormInformClient.Designer.cs">
       <DependentUpon>FormInformClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRegistrationAppeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegistrationAppeal.Designer.cs">
+      <DependentUpon>FormRegistrationAppeal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRegistrationOfPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegistrationOfPayment.Designer.cs">
+      <DependentUpon>FormRegistrationOfPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="IndividualClient.cs" />
     <Compile Include="Forms\FormAllClients.cs">
@@ -91,6 +109,9 @@
     <EmbeddedResource Include="Forms\FormAddNewEmployee.resx">
       <DependentUpon>FormAddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewSubcategoty.resx">
+      <DependentUpon>FormAddNewSubcategoty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAllClients.resx">
       <DependentUpon>FormAllClients.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormInformClient.resx">
       <DependentUpon>FormInformClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegistrationAppeal.resx">
+      <DependentUpon>FormRegistrationAppeal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegistrationOfPayment.resx">
+      <DependentUpon>FormRegistrationOfPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

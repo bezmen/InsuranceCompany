@@ -38,13 +38,31 @@ namespace InsuranceCompany
 
         private void buttonAddNewCategory_Click(object sender, EventArgs e)
         {
-            FormAddNewCategory startForm = new FormAddNewCategory();
+            FormAddNewCategory startForm = new FormAddNewCategory(dicCategory);
             startForm.ShowDialog();
         }
 
         private void buttonAddNewEmployee_Click(object sender, EventArgs e)
         {
             FormAddNewEmployee startForm = new FormAddNewEmployee(employees);
+            startForm.ShowDialog();
+        }
+
+        private void buttonAddNewSubcategory_Click(object sender, EventArgs e)
+        {
+            FormAddNewSubcategoty startForm = new FormAddNewSubcategoty(dicCategory);
+            startForm.ShowDialog();
+        }
+
+        private void buttonRegistrationAppeal_Click(object sender, EventArgs e)
+        {
+            FormRegistrationAppeal startForm = new FormRegistrationAppeal();
+            startForm.ShowDialog();
+        }
+
+        private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
+        {
+            FormRegistrationOfPayment startForm = new FormRegistrationOfPayment();
             startForm.ShowDialog();
         }
     }

@@ -27,6 +27,15 @@ namespace InsuranceCompany.Forms
             this.dicCategory = dicCategory;
 
             textBoxClient.Enabled = false;
+;
+            comboBoxTerm.Items.Add("1 месяц");
+            comboBoxTerm.Items.Add("3 месяца");
+            comboBoxTerm.Items.Add("6 месяцев");
+            comboBoxTerm.Items.Add("1 год");
+
+            comboBoxPaymentTerm.Items.Add("3 дня");
+            comboBoxPaymentTerm.Items.Add("1 неделя");
+            comboBoxPaymentTerm.Items.Add("1 месяц");
 
             foreach (var item in dicCategory)
                 comboBoxCategory.Items.Add(item.Key);
@@ -44,6 +53,12 @@ namespace InsuranceCompany.Forms
                 var client = clients.Last() as EntityClient;
                 textBoxClient.Text = client.NameCompany;
             }
+
+            comboBoxPaymentTerm.Items.Add("3 дня");
+            comboBoxPaymentTerm.Items.Add("7 дней");
+            comboBoxPaymentTerm.Items.Add("1 месяц");
+            comboBoxPaymentTerm.Items.Add("3 месяца");
+
             // textBoxClient.Text = clients.Last();
             // textBoxNumPolicy.Text =datebase ID;
         }

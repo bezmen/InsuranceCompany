@@ -32,6 +32,9 @@
             this.buttonGetIncurence = new System.Windows.Forms.Button();
             this.buttonAddNewCategory = new System.Windows.Forms.Button();
             this.buttonAddNewEmployee = new System.Windows.Forms.Button();
+            this.buttonAddNewSubcategory = new System.Windows.Forms.Button();
+            this.buttonRegistrationAppeal = new System.Windows.Forms.Button();
+            this.buttonRegistrationOfPayment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -46,55 +49,90 @@
             // 
             // buttonGetIncurence
             // 
-            this.buttonGetIncurence.Location = new System.Drawing.Point(150, 312);
+            this.buttonGetIncurence.Location = new System.Drawing.Point(473, 34);
             this.buttonGetIncurence.Name = "buttonGetIncurence";
             this.buttonGetIncurence.Size = new System.Drawing.Size(144, 23);
             this.buttonGetIncurence.TabIndex = 1;
-            this.buttonGetIncurence.Text = "Оформить страховку";
+            this.buttonGetIncurence.Text = "Оформить полис";
             this.buttonGetIncurence.UseVisualStyleBackColor = true;
             this.buttonGetIncurence.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonAddNewCategory
             // 
-            this.buttonAddNewCategory.Location = new System.Drawing.Point(31, 341);
+            this.buttonAddNewCategory.Location = new System.Drawing.Point(473, 267);
             this.buttonAddNewCategory.Name = "buttonAddNewCategory";
-            this.buttonAddNewCategory.Size = new System.Drawing.Size(156, 23);
+            this.buttonAddNewCategory.Size = new System.Drawing.Size(167, 23);
             this.buttonAddNewCategory.TabIndex = 2;
-            this.buttonAddNewCategory.Text = "Добавить новые категории";
+            this.buttonAddNewCategory.Text = "Добавить категорию полиса";
             this.buttonAddNewCategory.UseVisualStyleBackColor = true;
             this.buttonAddNewCategory.Click += new System.EventHandler(this.buttonAddNewCategory_Click);
             // 
             // buttonAddNewEmployee
             // 
-            this.buttonAddNewEmployee.Location = new System.Drawing.Point(271, 341);
+            this.buttonAddNewEmployee.Location = new System.Drawing.Point(473, 324);
             this.buttonAddNewEmployee.Name = "buttonAddNewEmployee";
-            this.buttonAddNewEmployee.Size = new System.Drawing.Size(147, 23);
+            this.buttonAddNewEmployee.Size = new System.Drawing.Size(167, 23);
             this.buttonAddNewEmployee.TabIndex = 3;
             this.buttonAddNewEmployee.Text = "Добавить сотрудника";
             this.buttonAddNewEmployee.UseVisualStyleBackColor = true;
             this.buttonAddNewEmployee.Click += new System.EventHandler(this.buttonAddNewEmployee_Click);
             // 
-            // Form1
+            // buttonAddNewSubcategory
+            // 
+            this.buttonAddNewSubcategory.Location = new System.Drawing.Point(473, 296);
+            this.buttonAddNewSubcategory.Name = "buttonAddNewSubcategory";
+            this.buttonAddNewSubcategory.Size = new System.Drawing.Size(167, 23);
+            this.buttonAddNewSubcategory.TabIndex = 4;
+            this.buttonAddNewSubcategory.Text = "Добавить страховой случай";
+            this.buttonAddNewSubcategory.UseVisualStyleBackColor = true;
+            this.buttonAddNewSubcategory.Click += new System.EventHandler(this.buttonAddNewSubcategory_Click);
+            // 
+            // buttonRegistrationAppeal
+            // 
+            this.buttonRegistrationAppeal.Location = new System.Drawing.Point(473, 63);
+            this.buttonRegistrationAppeal.Name = "buttonRegistrationAppeal";
+            this.buttonRegistrationAppeal.Size = new System.Drawing.Size(144, 23);
+            this.buttonRegistrationAppeal.TabIndex = 5;
+            this.buttonRegistrationAppeal.Text = "Оформить обращение";
+            this.buttonRegistrationAppeal.UseVisualStyleBackColor = true;
+            this.buttonRegistrationAppeal.Click += new System.EventHandler(this.buttonRegistrationAppeal_Click);
+            // 
+            // buttonRegistrationOfPayment
+            // 
+            this.buttonRegistrationOfPayment.Location = new System.Drawing.Point(473, 92);
+            this.buttonRegistrationOfPayment.Name = "buttonRegistrationOfPayment";
+            this.buttonRegistrationOfPayment.Size = new System.Drawing.Size(144, 23);
+            this.buttonRegistrationOfPayment.TabIndex = 6;
+            this.buttonRegistrationOfPayment.Text = "Оформление выплаты";
+            this.buttonRegistrationOfPayment.UseVisualStyleBackColor = true;
+            this.buttonRegistrationOfPayment.Click += new System.EventHandler(this.buttonRegistrationOfPayment_Click);
+            // 
+            // FormAllClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 376);
+            this.ClientSize = new System.Drawing.Size(669, 376);
+            this.Controls.Add(this.buttonRegistrationOfPayment);
+            this.Controls.Add(this.buttonRegistrationAppeal);
+            this.Controls.Add(this.buttonAddNewSubcategory);
             this.Controls.Add(this.buttonAddNewEmployee);
             this.Controls.Add(this.buttonAddNewCategory);
             this.Controls.Add(this.buttonGetIncurence);
             this.Controls.Add(this.listView1);
-            this.Name = "Form1";
+            this.Name = "FormAllClients";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button buttonGetIncurence;
         private System.Windows.Forms.Button buttonAddNewCategory;
         private System.Windows.Forms.Button buttonAddNewEmployee;
+        private System.Windows.Forms.Button buttonAddNewSubcategory;
+        private System.Windows.Forms.Button buttonRegistrationAppeal;
+        private System.Windows.Forms.Button buttonRegistrationOfPayment;
+        protected internal System.Windows.Forms.ListView listView1;
     }
 }
 

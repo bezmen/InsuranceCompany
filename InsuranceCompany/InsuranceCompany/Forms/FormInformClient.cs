@@ -16,7 +16,9 @@ namespace InsuranceCompany.Forms
         List<Employee> employees;
         FormAllClients main;
         Dictionary<Category, List<Subcategory>> dicCategoryes;
-
+        // сумма полиса - это сумма на которую тебя страхуют
+        // стоиомсть полиса - взносы в раз год
+        // взносы примерно будут по 10% от суммы полиса
         public FormInformClient(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategoreyes)
         {
             InitializeComponent();

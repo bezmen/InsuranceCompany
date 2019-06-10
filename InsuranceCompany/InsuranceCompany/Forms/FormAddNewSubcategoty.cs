@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany.Forms
 {
-    public partial class FormAddNewCategory : Form
+    public partial class FormAddNewSubcategoty : Form
     {
         Dictionary<Category, List<Subcategory>> dicCategory;
 
-        public FormAddNewCategory(Dictionary<Category, List<Subcategory>> dicCategory)
+        public FormAddNewSubcategoty(Dictionary<Category, List<Subcategory>> dicCategory)
         {
             this.dicCategory = dicCategory;
             InitializeComponent();
+            foreach (var item in dicCategory)
+            {
+                comboBoxCategory.Items.Add(item.Key);
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            dicCategory.Add(new Category(textBoxCategory.Text), new List<Subcategory>());
+            dicCategory[(Category)comboBoxCategory.SelectedItem].Add(new Subcategory(textBoxInsuranceCase.Text));
         }
     }
 }

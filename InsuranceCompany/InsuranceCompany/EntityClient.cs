@@ -24,5 +24,9 @@ namespace InsuranceCompany
             Address = address;
             NumberOfTelephone = telephone;
         }
+        public override string ToString()
+        {
+            return NameCompany;
+        }
     }
 }

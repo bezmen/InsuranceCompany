@@ -185,6 +185,7 @@ namespace InsuranceCompany.Forms
             else
             {
                 removeIndividComponents();
+
                 #region Entity components
 
                 this.labelNameCompany = new System.Windows.Forms.Label();
@@ -381,6 +382,7 @@ namespace InsuranceCompany.Forms
             }
             FormPolicy startForm = new FormPolicy(clients, employees, main, dicCategoryes);
             startForm.Show();
+            this.Close();
         }
     }
 }

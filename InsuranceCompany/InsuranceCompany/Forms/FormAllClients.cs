@@ -16,11 +16,12 @@ namespace InsuranceCompany
         Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
         List<Client> clients = new List<Client>();
         List<Employee> employees = new List<Employee>();
+        List<Appeal> appeals = new List<Appeal>();
         
         public FormAllClients()
         {
             InitializeComponent();
-            dicCategory.Add(new Category("КАСКО"), new List<Subcategory>() { new Subcategory("item1"), new Subcategory("item2") });
+            dicCategory.Add(new Category("КАСКО"), new List<Subcategory>() { new Subcategory("item1", 2), new Subcategory("item2", 3) });
             employees.Add(new Employee("Безмен А. Л.", "ул. Чапаева 41-2", "+375333539190"));
             listView1.Columns.Add("Клиент", -10, HorizontalAlignment.Left);
             listView1.Columns.Add("Тип", -10, HorizontalAlignment.Center);
@@ -56,7 +57,7 @@ namespace InsuranceCompany
 
         private void buttonRegistrationAppeal_Click(object sender, EventArgs e)
         {
-            FormRegistrationAppeal startForm = new FormRegistrationAppeal();
+            FormRegistrationAppeal startForm = new FormRegistrationAppeal(clients, dicCategory, appeals);
             startForm.ShowDialog();
         }
 

@@ -16,6 +16,8 @@ namespace InsuranceCompany.Forms
         List<Employee> employees;
         FormAllClients main;
         Dictionary<Category, List<Subcategory>> dicCategory;
+        List<Appeal> appeals;
+        
 
         public FormPolicy(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategory)
         {
@@ -27,6 +29,7 @@ namespace InsuranceCompany.Forms
             this.dicCategory = dicCategory;
 
             textBoxClient.Enabled = false;
+            textBoxNumPolicy.Text = clients.Count.ToString();
 ;
             comboBoxTerm.Items.Add("1 месяц");
             comboBoxTerm.Items.Add("3 месяца");
@@ -34,8 +37,9 @@ namespace InsuranceCompany.Forms
             comboBoxTerm.Items.Add("1 год");
 
             comboBoxPaymentTerm.Items.Add("3 дня");
-            comboBoxPaymentTerm.Items.Add("1 неделя");
+            comboBoxPaymentTerm.Items.Add("7 дней");
             comboBoxPaymentTerm.Items.Add("1 месяц");
+            comboBoxPaymentTerm.Items.Add("3 месяца");
 
             foreach (var item in dicCategory)
                 comboBoxCategory.Items.Add(item.Key);
@@ -53,12 +57,6 @@ namespace InsuranceCompany.Forms
                 var client = clients.Last() as EntityClient;
                 textBoxClient.Text = client.NameCompany;
             }
-
-            comboBoxPaymentTerm.Items.Add("3 дня");
-            comboBoxPaymentTerm.Items.Add("7 дней");
-            comboBoxPaymentTerm.Items.Add("1 месяц");
-            comboBoxPaymentTerm.Items.Add("3 месяца");
-
             // textBoxClient.Text = clients.Last();
             // textBoxNumPolicy.Text =datebase ID;
         }
@@ -72,6 +70,16 @@ namespace InsuranceCompany.Forms
                 item.SubItems.Add("физ. лицо");
                 item.SubItems.Add(client.Address);
                 main.listView1.Items.Add(item);
+                clients.Last().Policies.Add(new IncurencePolicy(
+                    main.listView1.Items.Count,
+                    comboBoxEmployee.SelectedItem as Employee,
+                    comboBoxCategory.SelectedItem as Category,
+                    dateTimePickerConclude.Value,
+                    getTermOfImprisonment(),
+                    Convert.ToDecimal(textBoxSumPolicy.Text),
+                    Convert.ToDecimal(textBoxCostPolicy.Text),
+                    getPaymentTerm()
+                    ));
             }
             else if (clients.Last() is EntityClient)
             {
@@ -80,8 +88,57 @@ namespace InsuranceCompany.Forms
                 item.SubItems.Add("юр. лицо");
                 item.SubItems.Add(client.Address);
                 main.listView1.Items.Add(item);
+                clients.Last().Policies.Add(new IncurencePolicy(
+                    main.listView1.Items.Count,
+                    comboBoxEmployee.SelectedItem as Employee,
+                    comboBoxCategory.SelectedItem as Category,
+                    dateTimePickerConclude.Value,
+                    getTermOfImprisonment(),
+                    Convert.ToDecimal(textBoxSumPolicy.Text),
+                    Convert.ToDecimal(textBoxCostPolicy.Text),
+                    getPaymentTerm()
+                    ));
             }
             this.Close();
+        }
+        private DateTime getTermOfImprisonment()
+        {
+            DateTime date = new DateTime();
+            switch (comboBoxTerm.SelectedIndex)
+            {
+                case 0: date.AddMonths(1);
+                    break;
+                case 1: date.AddMonths(3);
+                    break;
+                case 2: date.AddMonths(6);
+                    break;
+                default: date.AddYears(1);
+                    break;
+            }
+            return date;
+        }
+
+        private int getPaymentTerm()
+        {
+            int days = 0;
+            switch (comboBoxPaymentTerm.SelectedIndex)
+            {
+                case 0:
+                    days = 3;
+                    break;
+                case 1:
+                    days = 7;
+                    break;
+                case 2:
+                    days = 30;
+                    break;
+                case 3:
+                    days = 90;
+                    break;
+                default:
+                    break;
+            }
+            return days;
         }
     }
 }

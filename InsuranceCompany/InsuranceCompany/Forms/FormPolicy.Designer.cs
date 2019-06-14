@@ -60,6 +60,7 @@
             // 
             // textBoxNumPolicy
             // 
+            this.textBoxNumPolicy.Enabled = false;
             this.textBoxNumPolicy.Location = new System.Drawing.Point(166, 17);
             this.textBoxNumPolicy.Name = "textBoxNumPolicy";
             this.textBoxNumPolicy.Size = new System.Drawing.Size(120, 20);
@@ -130,9 +131,9 @@
             // 
             // textBoxClient
             // 
-            this.textBoxClient.Location = new System.Drawing.Point(166, 49);
+            this.textBoxClient.Location = new System.Drawing.Point(167, 49);
             this.textBoxClient.Name = "textBoxClient";
-            this.textBoxClient.Size = new System.Drawing.Size(120, 20);
+            this.textBoxClient.Size = new System.Drawing.Size(201, 20);
             this.textBoxClient.TabIndex = 12;
             // 
             // textBoxSumPolicy
@@ -156,7 +157,7 @@
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(165, 79);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCategory.Size = new System.Drawing.Size(146, 21);
             this.comboBoxCategory.TabIndex = 15;
             // 
             // dateTimePickerConclude

@@ -9,5 +9,9 @@ namespace InsuranceCompany
     public class Client
     {
         public List<IncurencePolicy> Policies { get; set; }
+        public Client()
+        {
+            Policies = new List<IncurencePolicy>();
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace InsuranceCompany.Forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            dicCategory[(Category)comboBoxCategory.SelectedItem].Add(new Subcategory(textBoxInsuranceCase.Text));
+            dicCategory[(Category)comboBoxCategory.SelectedItem].Add(new Subcategory(textBoxInsuranceCase.Text, Convert.ToDouble(textBoxPercent.Text)));
         }
     }
 }

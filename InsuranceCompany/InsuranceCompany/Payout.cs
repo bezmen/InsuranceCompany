@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    public class Appeal
+    public class Payout
     {
         public Client Client { get; }
         public Category Category { get; }
         public Subcategory Subcategory { get; }
         public DateTime DateOfAppeal { get; set; }
-        public bool State { get; set; } // if State = true -> Appeal is opened
+        public DateTime DateOfPayout { get; }
+        public decimal SumPayout { get; set; }
 
-        public Appeal(DateTime dateOfAppeal, Client client, Category category, Subcategory subcategory)
+        public Payout(Client client, Category category, Subcategory subcategory, DateTime dateOfAppeal, DateTime dateOfPayout, decimal sumPayout)
         {
             Client = client;
             Category = category;
-            Subcategory =  subcategory;
+            Subcategory = subcategory;
             DateOfAppeal = dateOfAppeal;
-            State = true;
+            DateOfPayout = dateOfPayout;
+            SumPayout = sumPayout
         }
     }
 }

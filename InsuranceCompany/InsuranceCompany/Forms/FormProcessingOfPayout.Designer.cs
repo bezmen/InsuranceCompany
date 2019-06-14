@@ -1,6 +1,6 @@
 ﻿namespace InsuranceCompany.Forms
 {
-    partial class FormRegistrationOfPayment
+    partial class FormProcessingOfPayout
     {
         /// <summary>
         /// Required designer variable.

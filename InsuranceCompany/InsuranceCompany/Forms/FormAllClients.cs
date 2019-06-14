@@ -17,6 +17,7 @@ namespace InsuranceCompany
         List<Client> clients = new List<Client>();
         List<Employee> employees = new List<Employee>();
         List<Appeal> appeals = new List<Appeal>();
+        List<Payout> payouts = new List<Payout>();
         
         public FormAllClients()
         {
@@ -63,7 +64,7 @@ namespace InsuranceCompany
 
         private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
         {
-            FormRegistrationOfPayment startForm = new FormRegistrationOfPayment();
+            FormProcessingOfPayout startForm = new FormProcessingOfPayout();
             startForm.ShowDialog();
         }
     }

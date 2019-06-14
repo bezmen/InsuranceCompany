@@ -30,6 +30,7 @@ namespace InsuranceCompany.Forms
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
             appeals.Add(new Appeal(
+                new DateTime(),
                 comboBoxClient.SelectedItem as Client,
                 comboBoxCategory.SelectedItem as Category,
                 comboBoxSubcategory.SelectedItem as Subcategory));

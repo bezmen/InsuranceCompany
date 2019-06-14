@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany.Forms
 {
-    public partial class FormRegistrationOfPayment : Form
+    public partial class FormProcessingOfPayout : Form
     {
-        public FormRegistrationOfPayment()
+        public FormProcessingOfPayout()
         {
             InitializeComponent();
         }

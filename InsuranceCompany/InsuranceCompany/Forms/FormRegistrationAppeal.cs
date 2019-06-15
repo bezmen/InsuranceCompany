@@ -14,13 +14,11 @@ namespace InsuranceCompany.Forms
     {
         Dictionary<Category, List<Subcategory>> dicCategory;
         List<Client> clients;
-        List<Appeal> appeals;
 
-        public FormRegistrationAppeal(List<Client> clients, Dictionary<Category, List<Subcategory>> dicCategory, List<Appeal> appeals)
+        public FormRegistrationAppeal(List<Client> clients, Dictionary<Category, List<Subcategory>> dicCategory)
         {
             this.dicCategory = dicCategory;
             this.clients = clients;
-            this.appeals = appeals;
             InitializeComponent();
 
             foreach (var item in clients)
@@ -29,8 +27,8 @@ namespace InsuranceCompany.Forms
 
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
-            appeals.Add(new Appeal(
-                new DateTime(),
+            (comboBoxClient.SelectedItem as Client).Appeals.Add(new Appeal(
+                DateTime.Now,
                 comboBoxClient.SelectedItem as Client,
                 comboBoxCategory.SelectedItem as Category,
                 comboBoxSubcategory.SelectedItem as Subcategory));
@@ -50,9 +48,7 @@ namespace InsuranceCompany.Forms
             comboBoxSubcategory.SelectedItem = null;
             comboBoxSubcategory.Items.Clear();
             for (int i = 0; i < dicCategory[(Category)comboBoxCategory.SelectedItem].Count; i++)
-            {
                 comboBoxSubcategory.Items.Add(dicCategory[comboBoxCategory.SelectedItem as Category][i]);
-            }
         }
     }
 }

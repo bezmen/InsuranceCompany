@@ -59,7 +59,7 @@
             // 
             // buttonAddNewCategory
             // 
-            this.buttonAddNewCategory.Location = new System.Drawing.Point(473, 267);
+            this.buttonAddNewCategory.Location = new System.Drawing.Point(466, 279);
             this.buttonAddNewCategory.Name = "buttonAddNewCategory";
             this.buttonAddNewCategory.Size = new System.Drawing.Size(167, 23);
             this.buttonAddNewCategory.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // buttonAddNewEmployee
             // 
-            this.buttonAddNewEmployee.Location = new System.Drawing.Point(473, 324);
+            this.buttonAddNewEmployee.Location = new System.Drawing.Point(466, 336);
             this.buttonAddNewEmployee.Name = "buttonAddNewEmployee";
             this.buttonAddNewEmployee.Size = new System.Drawing.Size(167, 23);
             this.buttonAddNewEmployee.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // buttonAddNewSubcategory
             // 
-            this.buttonAddNewSubcategory.Location = new System.Drawing.Point(473, 296);
+            this.buttonAddNewSubcategory.Location = new System.Drawing.Point(466, 308);
             this.buttonAddNewSubcategory.Name = "buttonAddNewSubcategory";
             this.buttonAddNewSubcategory.Size = new System.Drawing.Size(167, 23);
             this.buttonAddNewSubcategory.TabIndex = 4;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 376);
+            this.ClientSize = new System.Drawing.Size(645, 376);
             this.Controls.Add(this.buttonRegistrationOfPayment);
             this.Controls.Add(this.buttonRegistrationAppeal);
             this.Controls.Add(this.buttonAddNewSubcategory);

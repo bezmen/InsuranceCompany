@@ -22,7 +22,7 @@ namespace InsuranceCompany
             Subcategory = subcategory;
             DateOfAppeal = dateOfAppeal;
             DateOfPayout = dateOfPayout;
-            SumPayout = sumPayout
+            SumPayout = sumPayout;
         }
     }
 }

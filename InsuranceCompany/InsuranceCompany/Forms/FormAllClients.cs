@@ -16,7 +16,6 @@ namespace InsuranceCompany
         Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
         List<Client> clients = new List<Client>();
         List<Employee> employees = new List<Employee>();
-        List<Appeal> appeals = new List<Appeal>();
         List<Payout> payouts = new List<Payout>();
         
         public FormAllClients()
@@ -58,13 +57,13 @@ namespace InsuranceCompany
 
         private void buttonRegistrationAppeal_Click(object sender, EventArgs e)
         {
-            FormRegistrationAppeal startForm = new FormRegistrationAppeal(clients, dicCategory, appeals);
+            FormRegistrationAppeal startForm = new FormRegistrationAppeal(clients, dicCategory);
             startForm.ShowDialog();
         }
 
         private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
         {
-            FormProcessingOfPayout startForm = new FormProcessingOfPayout();
+            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, payouts);
             startForm.ShowDialog();
         }
     }

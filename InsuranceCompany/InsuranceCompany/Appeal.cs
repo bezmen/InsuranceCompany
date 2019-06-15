@@ -22,5 +22,10 @@ namespace InsuranceCompany
             DateOfAppeal = dateOfAppeal;
             State = true;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}({1}) {2}", Category.Name, Subcategory.Name, DateOfAppeal.ToShortDateString());
+        }
     }
 }

@@ -15,9 +15,7 @@ namespace InsuranceCompany.Forms
         List<Client> clients;
         List<Employee> employees;
         FormAllClients main;
-        Dictionary<Category, List<Subcategory>> dicCategory;
-        List<Appeal> appeals;
-        
+        Dictionary<Category, List<Subcategory>> dicCategory;        
 
         public FormPolicy(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategory)
         {
@@ -30,7 +28,7 @@ namespace InsuranceCompany.Forms
 
             textBoxClient.Enabled = false;
             textBoxNumPolicy.Text = clients.Count.ToString();
-;
+
             comboBoxTerm.Items.Add("1 месяц");
             comboBoxTerm.Items.Add("3 месяца");
             comboBoxTerm.Items.Add("6 месяцев");
@@ -57,8 +55,6 @@ namespace InsuranceCompany.Forms
                 var client = clients.Last() as EntityClient;
                 textBoxClient.Text = client.NameCompany;
             }
-            // textBoxClient.Text = clients.Last();
-            // textBoxNumPolicy.Text =datebase ID;
         }
 
         private void buttonConclude_Click(object sender, EventArgs e)

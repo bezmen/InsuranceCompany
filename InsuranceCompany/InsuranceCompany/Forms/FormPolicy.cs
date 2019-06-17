@@ -62,10 +62,13 @@ namespace InsuranceCompany.Forms
             if (clients.Last() is IndividualClient)
             {
                 var client = clients.Last() as IndividualClient;
+
                 ListViewItem item = new ListViewItem(client.Name.ToString(), 0);
                 item.SubItems.Add("физ. лицо");
                 item.SubItems.Add(client.Address);
+                item.SubItems.Add(client.SumPayouts.ToString());
                 main.listView1.Items.Add(item);
+
                 clients.Last().Policies.Add(new IncurencePolicy(
                     main.listView1.Items.Count,
                     comboBoxEmployee.SelectedItem as Employee,
@@ -80,10 +83,13 @@ namespace InsuranceCompany.Forms
             else if (clients.Last() is EntityClient)
             {
                 var client = clients.Last() as EntityClient;
+
                 ListViewItem item = new ListViewItem(client.NameCompany.ToString(), 0);
                 item.SubItems.Add("юр. лицо");
                 item.SubItems.Add(client.Address);
+                item.SubItems.Add(client.SumPayouts.ToString());
                 main.listView1.Items.Add(item);
+
                 clients.Last().Policies.Add(new IncurencePolicy(
                     main.listView1.Items.Count,
                     comboBoxEmployee.SelectedItem as Employee,

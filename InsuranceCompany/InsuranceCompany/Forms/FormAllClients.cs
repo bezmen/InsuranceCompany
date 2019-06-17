@@ -63,7 +63,14 @@ namespace InsuranceCompany
 
         private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
         {
-            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, payouts);
+            FormAllClients main = this;
+            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, payouts, main);
+            startForm.ShowDialog();
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            FormClient startForm = new FormClient();
             startForm.ShowDialog();
         }
     }

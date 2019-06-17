@@ -100,6 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(275, 170);
             this.Controls.Add(this.textBoxPercent);
             this.Controls.Add(this.labelPercent);
@@ -108,8 +109,11 @@
             this.Controls.Add(this.textBoxInsuranceCase);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.comboBoxCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormAddNewSubcategoty";
+            this.RightToLeftLayout = true;
             this.Text = "FormAddNewSubcategoty";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

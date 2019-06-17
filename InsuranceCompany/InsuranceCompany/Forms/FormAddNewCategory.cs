@@ -23,6 +23,7 @@ namespace InsuranceCompany.Forms
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             dicCategory.Add(new Category(textBoxCategory.Text), new List<Subcategory>());
+            this.Close();
         }
     }
 }

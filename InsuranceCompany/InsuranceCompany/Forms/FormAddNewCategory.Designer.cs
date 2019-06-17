@@ -36,7 +36,7 @@
             // labelCategory
             // 
             this.labelCategory.AutoSize = true;
-            this.labelCategory.Location = new System.Drawing.Point(22, 25);
+            this.labelCategory.Location = new System.Drawing.Point(12, 22);
             this.labelCategory.Name = "labelCategory";
             this.labelCategory.Size = new System.Drawing.Size(60, 13);
             this.labelCategory.TabIndex = 0;

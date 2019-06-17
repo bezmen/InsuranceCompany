@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAccept = new System.Windows.Forms.Button();
             this.labelClient = new System.Windows.Forms.Label();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.textBoxCategory = new System.Windows.Forms.TextBox();
@@ -41,14 +41,15 @@
             this.textBoxSumPayout = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonAccept
             // 
-            this.button1.Location = new System.Drawing.Point(84, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAccept.Location = new System.Drawing.Point(84, 182);
+            this.buttonAccept.Name = "buttonAccept";
+            this.buttonAccept.Size = new System.Drawing.Size(90, 23);
+            this.buttonAccept.TabIndex = 0;
+            this.buttonAccept.Text = "Подтвердить";
+            this.buttonAccept.UseVisualStyleBackColor = true;
+            this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
             // labelClient
             // 
@@ -149,7 +150,7 @@
             this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.comboBoxClient);
             this.Controls.Add(this.labelClient);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAccept);
             this.Name = "FormProcessingOfPayout";
             this.Text = "FormRegistrationOfPayment";
             this.ResumeLayout(false);
@@ -159,7 +160,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAccept;
         private System.Windows.Forms.Label labelClient;
         private System.Windows.Forms.ComboBox comboBoxClient;
         private System.Windows.Forms.TextBox textBoxCategory;

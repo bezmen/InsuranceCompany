@@ -15,8 +15,10 @@ namespace InsuranceCompany
         public DateTime TermOfImprisonment { get; set; }
         public decimal Sum { get; set; }
         public decimal Cost { get; set; }
+        public decimal Payout { get; set; }
         public int PaymentTerm { get; set; }
-        
+
+
         public IncurencePolicy(int number, Employee employee, Category category, DateTime dateOfConclusion, DateTime termOfImprisonment, decimal sum, decimal cost, int paymentTerm)
         {
             Number = number;

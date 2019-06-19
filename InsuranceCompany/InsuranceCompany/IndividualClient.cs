@@ -8,14 +8,14 @@ namespace InsuranceCompany
 {
     public class IndividualClient : Client
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public DateTime Birthday { get; }
         public bool Sex { get; }
         public int StoolDryving { get; }
-        public string Address { get; set; }
-        public string NumberOfTelephone { get; set; }
+        public string Address { get; }
+        public string NumberOfTelephone { get; }
 
-        public IndividualClient(string name, DateTime birth, bool sex, int stoolDriv, string address, string number)
+        public IndividualClient(string name, DateTime birth, bool sex, string UTN, int stoolDriv, string address, string number) : base(UTN)
         {
             Name = name;
             Birthday = birth;

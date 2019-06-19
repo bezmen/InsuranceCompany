@@ -80,11 +80,11 @@
     <Compile Include="Forms\FormPolicy.Designer.cs">
       <DependentUpon>FormPolicy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormInformClient.cs">
+    <Compile Include="Forms\FormCustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormInformClient.Designer.cs">
-      <DependentUpon>FormInformClient.cs</DependentUpon>
+    <Compile Include="Forms\FormCustomerProfile.Designer.cs">
+      <DependentUpon>FormCustomerProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormRegistrationAppeal.cs">
       <SubType>Form</SubType>
@@ -128,8 +128,8 @@
     <EmbeddedResource Include="Forms\FormPolicy.resx">
       <DependentUpon>FormPolicy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormInformClient.resx">
-      <DependentUpon>FormInformClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCustomerProfile.resx">
+      <DependentUpon>FormCustomerProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRegistrationAppeal.resx">
       <DependentUpon>FormRegistrationAppeal.cs</DependentUpon>

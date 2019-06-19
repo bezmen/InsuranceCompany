@@ -32,6 +32,9 @@ namespace InsuranceCompany.Forms
                 comboBoxClient.SelectedItem as Client,
                 comboBoxCategory.SelectedItem as Category,
                 comboBoxSubcategory.SelectedItem as Subcategory));
+
+            (comboBoxClient.SelectedItem as Client).Appeals.Last().IsOppened = true;
+
             this.Close();
         }
 

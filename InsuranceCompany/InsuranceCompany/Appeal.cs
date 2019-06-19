@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    
     public class Appeal
     {
+        public enum StateAppeal
+        {
+            Accepted,
+            Denied,
+            Waiting
+        }
         public Client Client { get; }
         public Category Category { get; }
         public Subcategory Subcategory { get; }
-        public DateTime DateOfAppeal { get; set; }
-        public bool State { get; set; } // if State = true -> Appeal is opened
+        public DateTime DateOfAppeal { get; }
+        public bool IsOppened { get; set; } // if State = true -> Appeal is opened
+        public StateAppeal State { get; set; }
 
         public Appeal(DateTime dateOfAppeal, Client client, Category category, Subcategory subcategory)
         {
@@ -20,7 +28,8 @@ namespace InsuranceCompany
             Category = category;
             Subcategory =  subcategory;
             DateOfAppeal = dateOfAppeal;
-            State = true;
+            State = StateAppeal.Waiting;
+            IsOppened = false;
         }
 
         public override string ToString()

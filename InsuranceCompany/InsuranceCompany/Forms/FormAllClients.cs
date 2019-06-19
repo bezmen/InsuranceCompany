@@ -16,7 +16,6 @@ namespace InsuranceCompany
         Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
         List<Client> clients = new List<Client>();
         List<Employee> employees = new List<Employee>();
-        List<Payout> payouts = new List<Payout>();
         
         public FormAllClients()
         {
@@ -25,6 +24,7 @@ namespace InsuranceCompany
             employees.Add(new Employee("Безмен А. Л.", "ул. Чапаева 41-2", "+375333539190"));
             listView1.Columns.Add("Клиент", -10, HorizontalAlignment.Left);
             listView1.Columns.Add("Тип", -10, HorizontalAlignment.Center);
+            listView1.Columns.Add("УНП", -10, HorizontalAlignment.Center);
             listView1.Columns.Add("Адрес", -10, HorizontalAlignment.Center);
             listView1.Columns.Add("Суммарные выплаты", -2, HorizontalAlignment.Left);
             listView1.FullRowSelect = true;
@@ -33,7 +33,7 @@ namespace InsuranceCompany
         private void button1_Click(object sender, EventArgs e)
         {
             FormAllClients main = this;
-            FormInformClient startForm = new FormInformClient(clients, employees, main, dicCategory);
+            FormCustomerProfile startForm = new FormCustomerProfile(clients, employees, main, dicCategory);
             startForm.ShowDialog();
         }
 
@@ -64,14 +64,22 @@ namespace InsuranceCompany
         private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
         {
             FormAllClients main = this;
-            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, payouts, main);
+            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, main);
             startForm.ShowDialog();
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            FormClient startForm = new FormClient();
+            //var item = (listView1.SelectedItems[0] as Client).UTN;
+            string selectedClient = listView1.SelectedItems[0].SubItems[2].Text;//.ToString();
+            FormClient startForm = new FormClient(findSelectedClient(selectedClient));
             startForm.ShowDialog();
+        }
+
+
+        private Client findSelectedClient(string UTN)
+        {
+            return clients.Find(k => k.UTN.Equals(UTN));
         }
     }
 }

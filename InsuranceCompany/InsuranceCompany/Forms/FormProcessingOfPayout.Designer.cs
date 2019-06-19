@@ -39,11 +39,12 @@
             this.textBoxSubcategory = new System.Windows.Forms.TextBox();
             this.labelSumPayout = new System.Windows.Forms.Label();
             this.textBoxSumPayout = new System.Windows.Forms.TextBox();
+            this.buttonDenied = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(84, 182);
+            this.buttonAccept.Location = new System.Drawing.Point(15, 182);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(90, 23);
             this.buttonAccept.TabIndex = 0;
@@ -135,11 +136,23 @@
             this.textBoxSumPayout.Size = new System.Drawing.Size(121, 20);
             this.textBoxSumPayout.TabIndex = 10;
             // 
+            // buttonDenied
+            // 
+            this.buttonDenied.Location = new System.Drawing.Point(161, 182);
+            this.buttonDenied.Name = "buttonDenied";
+            this.buttonDenied.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonDenied.Size = new System.Drawing.Size(90, 23);
+            this.buttonDenied.TabIndex = 11;
+            this.buttonDenied.Text = "Отказать";
+            this.buttonDenied.UseVisualStyleBackColor = true;
+            this.buttonDenied.Click += new System.EventHandler(this.buttonDenied_Click);
+            // 
             // FormProcessingOfPayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 241);
+            this.Controls.Add(this.buttonDenied);
             this.Controls.Add(this.textBoxSumPayout);
             this.Controls.Add(this.labelSumPayout);
             this.Controls.Add(this.textBoxSubcategory);
@@ -171,5 +184,6 @@
         private System.Windows.Forms.TextBox textBoxSubcategory;
         private System.Windows.Forms.Label labelSumPayout;
         private System.Windows.Forms.TextBox textBoxSumPayout;
+        private System.Windows.Forms.Button buttonDenied;
     }
 }

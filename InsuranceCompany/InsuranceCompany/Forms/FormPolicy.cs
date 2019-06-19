@@ -65,6 +65,7 @@ namespace InsuranceCompany.Forms
 
                 ListViewItem item = new ListViewItem(client.Name.ToString(), 0);
                 item.SubItems.Add("физ. лицо");
+                item.SubItems.Add(client.UTN);
                 item.SubItems.Add(client.Address);
                 item.SubItems.Add(client.SumPayouts.ToString());
                 main.listView1.Items.Add(item);
@@ -86,6 +87,7 @@ namespace InsuranceCompany.Forms
 
                 ListViewItem item = new ListViewItem(client.NameCompany.ToString(), 0);
                 item.SubItems.Add("юр. лицо");
+                item.SubItems.Add(client.UTN);
                 item.SubItems.Add(client.Address);
                 item.SubItems.Add(client.SumPayouts.ToString());
                 main.listView1.Items.Add(item);

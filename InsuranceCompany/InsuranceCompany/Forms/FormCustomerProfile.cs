@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InsuranceCompany.Forms
 {
-    public partial class FormInformClient : Form
+    public partial class FormCustomerProfile : Form
     {
         List<Client> clients;
         List<Employee> employees;
@@ -19,7 +19,7 @@ namespace InsuranceCompany.Forms
         // сумма полиса - это сумма на которую тебя страхуют
         // стоиомсть полиса - взносы в раз год
         // взносы примерно будут по 10% от суммы полиса
-        public FormInformClient(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategoreyes)
+        public FormCustomerProfile(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategoreyes)
         {
             InitializeComponent();
             this.clients = clients;
@@ -36,21 +36,6 @@ namespace InsuranceCompany.Forms
 
                 #region Individ componets
 
-                this.labelFIO = new System.Windows.Forms.Label();
-                this.textBoxFIO = new System.Windows.Forms.TextBox();
-                this.labelBirthday = new System.Windows.Forms.Label();
-                this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
-                this.labelSex = new System.Windows.Forms.Label();
-                this.labelStoolDryving = new System.Windows.Forms.Label();
-                this.labelAddress = new System.Windows.Forms.Label();
-                this.labelTelephone = new System.Windows.Forms.Label();
-                this.textBoxStoolDryving = new System.Windows.Forms.TextBox();
-                this.textBoxAddress = new System.Windows.Forms.TextBox();
-                this.textBoxTelephone = new System.Windows.Forms.TextBox();
-                this.checkBoxFemale = new System.Windows.Forms.CheckBox();
-                this.checkBoxMale = new System.Windows.Forms.CheckBox();
-
-                this.SuspendLayout();
                 // 
                 // labelFIO
                 // 
@@ -71,7 +56,7 @@ namespace InsuranceCompany.Forms
                 // labelBirthday
                 // 
                 this.labelBirthday.AutoSize = true;
-                this.labelBirthday.Location = new System.Drawing.Point(12, 144);
+                this.labelBirthday.Location = new System.Drawing.Point(12, 125);
                 this.labelBirthday.Name = "labelBirthday";
                 this.labelBirthday.Size = new System.Drawing.Size(87, 13);
                 this.labelBirthday.TabIndex = 4;
@@ -79,7 +64,7 @@ namespace InsuranceCompany.Forms
                 // 
                 // dateTimePickerBirthday
                 // 
-                this.dateTimePickerBirthday.Location = new System.Drawing.Point(155, 138);
+                this.dateTimePickerBirthday.Location = new System.Drawing.Point(155, 119);
                 this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
                 this.dateTimePickerBirthday.Size = new System.Drawing.Size(193, 20);
                 this.dateTimePickerBirthday.TabIndex = 5;
@@ -87,7 +72,7 @@ namespace InsuranceCompany.Forms
                 // labelSex
                 // 
                 this.labelSex.AutoSize = true;
-                this.labelSex.Location = new System.Drawing.Point(12, 189);
+                this.labelSex.Location = new System.Drawing.Point(14, 155);
                 this.labelSex.Name = "labelSex";
                 this.labelSex.Size = new System.Drawing.Size(27, 13);
                 this.labelSex.TabIndex = 6;
@@ -96,7 +81,7 @@ namespace InsuranceCompany.Forms
                 // labelStoolDryving
                 // 
                 this.labelStoolDryving.AutoSize = true;
-                this.labelStoolDryving.Location = new System.Drawing.Point(12, 227);
+                this.labelStoolDryving.Location = new System.Drawing.Point(12, 188);
                 this.labelStoolDryving.Name = "labelStoolDryving";
                 this.labelStoolDryving.Size = new System.Drawing.Size(86, 13);
                 this.labelStoolDryving.TabIndex = 7;
@@ -105,7 +90,7 @@ namespace InsuranceCompany.Forms
                 // labelAddress
                 // 
                 this.labelAddress.AutoSize = true;
-                this.labelAddress.Location = new System.Drawing.Point(12, 269);
+                this.labelAddress.Location = new System.Drawing.Point(12, 257);
                 this.labelAddress.Name = "labelAddress";
                 this.labelAddress.Size = new System.Drawing.Size(38, 13);
                 this.labelAddress.TabIndex = 8;
@@ -114,7 +99,7 @@ namespace InsuranceCompany.Forms
                 // labelTelephone
                 // 
                 this.labelTelephone.AutoSize = true;
-                this.labelTelephone.Location = new System.Drawing.Point(12, 303);
+                this.labelTelephone.Location = new System.Drawing.Point(12, 291);
                 this.labelTelephone.Name = "labelTelephone";
                 this.labelTelephone.Size = new System.Drawing.Size(52, 13);
                 this.labelTelephone.TabIndex = 9;
@@ -122,21 +107,21 @@ namespace InsuranceCompany.Forms
                 // 
                 // textBoxStoolDryving
                 // 
-                this.textBoxStoolDryving.Location = new System.Drawing.Point(155, 227);
+                this.textBoxStoolDryving.Location = new System.Drawing.Point(155, 188);
                 this.textBoxStoolDryving.Name = "textBoxStoolDryving";
                 this.textBoxStoolDryving.Size = new System.Drawing.Size(29, 20);
                 this.textBoxStoolDryving.TabIndex = 10;
                 // 
                 // textBoxAddress
                 // 
-                this.textBoxAddress.Location = new System.Drawing.Point(155, 269);
+                this.textBoxAddress.Location = new System.Drawing.Point(155, 257);
                 this.textBoxAddress.Name = "textBoxAddress";
                 this.textBoxAddress.Size = new System.Drawing.Size(120, 20);
                 this.textBoxAddress.TabIndex = 11;
                 // 
                 // textBoxTelephone
                 // 
-                this.textBoxTelephone.Location = new System.Drawing.Point(155, 303);
+                this.textBoxTelephone.Location = new System.Drawing.Point(155, 291);
                 this.textBoxTelephone.Name = "textBoxTelephone";
                 this.textBoxTelephone.Size = new System.Drawing.Size(120, 20);
                 this.textBoxTelephone.TabIndex = 12;
@@ -144,25 +129,46 @@ namespace InsuranceCompany.Forms
                 // checkBoxFemale
                 // 
                 this.checkBoxFemale.AutoSize = true;
-                this.checkBoxFemale.Location = new System.Drawing.Point(255, 189);
+                this.checkBoxFemale.Location = new System.Drawing.Point(257, 155);
                 this.checkBoxFemale.Name = "checkBoxFemale";
                 this.checkBoxFemale.Size = new System.Drawing.Size(76, 17);
                 this.checkBoxFemale.TabIndex = 14;
                 this.checkBoxFemale.Text = "Женщина";
                 this.checkBoxFemale.UseVisualStyleBackColor = true;
-                this.checkBoxFemale.Click += new EventHandler(cbClick);
                 // 
                 // checkBoxMale
                 // 
                 this.checkBoxMale.AutoSize = true;
-                this.checkBoxMale.Location = new System.Drawing.Point(155, 189);
+                this.checkBoxMale.Location = new System.Drawing.Point(157, 155);
                 this.checkBoxMale.Name = "checkBoxMale";
                 this.checkBoxMale.Size = new System.Drawing.Size(71, 17);
                 this.checkBoxMale.TabIndex = 13;
                 this.checkBoxMale.Text = "Мужчина";
                 this.checkBoxMale.UseVisualStyleBackColor = true;
-                this.checkBoxMale.Click += new EventHandler(cbClick);
-
+                // 
+                // label1Utn
+                // 
+                this.label1Utn.AutoSize = true;
+                this.label1Utn.Location = new System.Drawing.Point(14, 225);
+                this.label1Utn.Name = "label1Utn";
+                this.label1Utn.Size = new System.Drawing.Size(31, 13);
+                this.label1Utn.TabIndex = 15;
+                this.label1Utn.Text = "УНП";
+                // 
+                // textBox1UTN
+                // 
+                this.textBox1UTN.Location = new System.Drawing.Point(155, 222);
+                this.textBox1UTN.Name = "textBox1UTN";
+                this.textBox1UTN.Size = new System.Drawing.Size(120, 20);
+                this.textBox1UTN.TabIndex = 16;
+                // 
+                // FormCustomerProfile
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.ClientSize = new System.Drawing.Size(365, 384);
+                this.Controls.Add(this.textBox1UTN);
+                this.Controls.Add(this.label1Utn);
                 this.Controls.Add(this.checkBoxFemale);
                 this.Controls.Add(this.checkBoxMale);
                 this.Controls.Add(this.textBoxTelephone);
@@ -176,9 +182,7 @@ namespace InsuranceCompany.Forms
                 this.Controls.Add(this.labelBirthday);
                 this.Controls.Add(this.textBoxFIO);
                 this.Controls.Add(this.labelFIO);
-
-                this.ResumeLayout(false);
-                this.PerformLayout();
+                this.Controls.Add(this.buttonNext);
 
                 #endregion
             }
@@ -354,7 +358,7 @@ namespace InsuranceCompany.Forms
             (sender as CheckBox).Checked = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonNext_Click(object sender, EventArgs e)
         {
             if (radioButtonIndivid.Checked)
             {
@@ -362,6 +366,7 @@ namespace InsuranceCompany.Forms
                     textBoxFIO.Text,
                     dateTimePickerBirthday.Value,
                     checkBoxMale.Checked,
+                    textBox1UTN.Text,
                     Convert.ToInt32(textBoxStoolDryving.Text),
                     textBoxAddress.Text,
                     textBoxTelephone.Text

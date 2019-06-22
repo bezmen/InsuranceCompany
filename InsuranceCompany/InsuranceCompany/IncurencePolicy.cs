@@ -18,7 +18,6 @@ namespace InsuranceCompany
         public decimal Payout { get; set; }
         public int PaymentTerm { get; set; }
 
-
         public IncurencePolicy(int number, Employee employee, Category category, DateTime dateOfConclusion, DateTime termOfImprisonment, decimal sum, decimal cost, int paymentTerm)
         {
             Number = number;

@@ -109,7 +109,7 @@
             this.Controls.Add(this.textBoxInsuranceCase);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.comboBoxCategory);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormAddNewSubcategoty";
             this.RightToLeftLayout = true;
             this.Text = "FormAddNewSubcategoty";

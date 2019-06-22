@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 188);
+            this.ClientSize = new System.Drawing.Size(269, 174);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.textBoxTelephone);
             this.Controls.Add(this.textBoxAddress);
@@ -107,6 +107,7 @@
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.textBoxFIO);
             this.Controls.Add(this.labelFIO);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormAddNewEmployee";
             this.Text = "FormAddNewEmployee";
             this.ResumeLayout(false);

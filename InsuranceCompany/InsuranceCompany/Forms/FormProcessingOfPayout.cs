@@ -12,37 +12,40 @@ namespace InsuranceCompany.Forms
 {
     public partial class FormProcessingOfPayout : Form
     {
-        List<Client> clients;
         FormAllClients main;
 
-        public FormProcessingOfPayout(List<Client> clients, FormAllClients main)
+        public FormProcessingOfPayout(FormAllClients main)
         {
-            this.clients = clients;
             this.main = main;
- 
             InitializeComponent();
-
-            foreach (var item in clients)
+            foreach (var item in main.clients)
                 comboBoxClient.Items.Add(item);
         }
 
         private void comboBoxClient_SelectedValueChanged(object sender, EventArgs e)
         {
+            textBoxCategory.Text = null;
+            textBoxSubcategory.Text = null;
             comboBoxAppeal.SelectedItem = null;
             comboBoxAppeal.Items.Clear();
 
-            foreach (var item in clients)
-                for (int i = 0; i < item.Appeals.Count; i++)
-                    if (item.Appeals[i].IsOppened == true)
-                        comboBoxAppeal.Items.Add(item.Appeals[i]);
+            var client = comboBoxClient.SelectedItem as Client;
+
+            foreach (var item in client.Appeals)
+                if (item.IsOppened == true)
+                    comboBoxAppeal.Items.Add(item);
         }
 
         private void comboBoxAppeal_SelectedValueChanged(object sender, EventArgs e)
         {
+            textBoxSumPayout.Text = null;
             textBoxCategory.Text = null;
             textBoxSubcategory.Text = null;
-            textBoxCategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Category.Name;
-            textBoxSubcategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Subcategory.Name;
+            if (comboBoxAppeal.SelectedItem != null)
+            {
+                textBoxCategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Category.Name;
+                textBoxSubcategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Subcategory.Name;
+            }
         }
 
         private void buttonAccept_Click(object sender, EventArgs e)

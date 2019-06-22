@@ -13,10 +13,11 @@ namespace InsuranceCompany
 {
     public partial class FormAllClients : Form
     {
-        Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
-        List<Client> clients = new List<Client>();
-        List<Employee> employees = new List<Employee>();
-        
+        public Dictionary<Category, List<Subcategory>> dicCategory = new Dictionary<Category, List<Subcategory>>();
+        public List<Client> clients = new List<Client>();
+        public List<Employee> employees = new List<Employee>();
+        public int countPolycies = 1;
+
         public FormAllClients()
         {
             InitializeComponent();
@@ -33,13 +34,23 @@ namespace InsuranceCompany
         private void button1_Click(object sender, EventArgs e)
         {
             FormAllClients main = this;
-            FormCustomerProfile startForm = new FormCustomerProfile(clients, employees, main, dicCategory);
+            FormCustomerProfile startForm = new FormCustomerProfile(main);
             startForm.ShowDialog();
+
+            var client = clients.Last();
+
+            ListViewItem item = new ListViewItem(client.Name.ToString(), 0);
+            item.SubItems.Add("физ. лицо");
+            item.SubItems.Add(client.UTN);
+            item.SubItems.Add(client.Address);
+            item.SubItems.Add(client.SumPayouts.ToString());
+            main.listView1.Items.Add(item);
         }
 
         private void buttonAddNewCategory_Click(object sender, EventArgs e)
         {
-            FormAddNewCategory startForm = new FormAddNewCategory(dicCategory);
+            FormAllClients main = this;
+            FormAddNewCategory startForm = new FormAddNewCategory(main);
             startForm.ShowDialog();
         }
 
@@ -64,22 +75,26 @@ namespace InsuranceCompany
         private void buttonRegistrationOfPayment_Click(object sender, EventArgs e)
         {
             FormAllClients main = this;
-            FormProcessingOfPayout startForm = new FormProcessingOfPayout(clients, main);
+            FormProcessingOfPayout startForm = new FormProcessingOfPayout(main);
             startForm.ShowDialog();
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            //var item = (listView1.SelectedItems[0] as Client).UTN;
-            string selectedClient = listView1.SelectedItems[0].SubItems[2].Text;//.ToString();
-            FormClient startForm = new FormClient(findSelectedClient(selectedClient));
+            FormAllClients main = this;
+            string selectedClient = listView1.SelectedItems[0].SubItems[2].Text;
+            FormClient startForm = new FormClient(findSelectedClient(selectedClient), main);
             startForm.ShowDialog();
         }
-
-
-        private Client findSelectedClient(string UTN)
+        private void buttonListCategories_Click(object sender, EventArgs e)
         {
-            return clients.Find(k => k.UTN.Equals(UTN));
+            FormAllClients main = this;
+            FormShowAllCategories startForm = new FormShowAllCategories(main);
+            startForm.Show();
         }
+
+        private Client findSelectedClient(string UTN) => clients.Find(k => k.UTN.Equals(UTN));
+
+        
     }
 }

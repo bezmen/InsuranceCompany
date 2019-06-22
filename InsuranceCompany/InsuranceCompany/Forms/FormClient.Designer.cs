@@ -28,28 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonShowPayouts = new System.Windows.Forms.Button();
+            this.buttonShowPolicies = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.buttonGetInsurence = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonShowPayouts
             // 
-            this.button1.Location = new System.Drawing.Point(241, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonShowPayouts.Location = new System.Drawing.Point(203, 299);
+            this.buttonShowPayouts.Name = "buttonShowPayouts";
+            this.buttonShowPayouts.Size = new System.Drawing.Size(103, 23);
+            this.buttonShowPayouts.TabIndex = 0;
+            this.buttonShowPayouts.Text = "Спиок выплат";
+            this.buttonShowPayouts.UseVisualStyleBackColor = true;
+            this.buttonShowPayouts.Click += new System.EventHandler(this.buttonShowPayouts_Click);
             // 
-            // button2
+            // buttonShowPolicies
             // 
-            this.button2.Location = new System.Drawing.Point(107, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonShowPolicies.Location = new System.Drawing.Point(33, 299);
+            this.buttonShowPolicies.Name = "buttonShowPolicies";
+            this.buttonShowPolicies.Size = new System.Drawing.Size(124, 23);
+            this.buttonShowPolicies.TabIndex = 1;
+            this.buttonShowPolicies.Text = "Список полисов";
+            this.buttonShowPolicies.UseVisualStyleBackColor = true;
+            this.buttonShowPolicies.Click += new System.EventHandler(this.buttonShowPolicies_Click);
             // 
             // listView1
             // 
@@ -58,15 +62,38 @@
             this.listView1.Size = new System.Drawing.Size(459, 223);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // buttonGetInsurence
+            // 
+            this.buttonGetInsurence.Location = new System.Drawing.Point(362, 299);
+            this.buttonGetInsurence.Name = "buttonGetInsurence";
+            this.buttonGetInsurence.Size = new System.Drawing.Size(102, 23);
+            this.buttonGetInsurence.TabIndex = 3;
+            this.buttonGetInsurence.Text = "Оформить полис";
+            this.buttonGetInsurence.UseVisualStyleBackColor = true;
+            this.buttonGetInsurence.Click += new System.EventHandler(this.buttonGetInsurence_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(203, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Экспорт";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 382);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(505, 340);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonGetInsurence);
+            this.Controls.Add(this.buttonShowPolicies);
+            this.Controls.Add(this.buttonShowPayouts);
+            this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormClient";
             this.Text = "FormClient";
             this.ResumeLayout(false);
@@ -75,8 +102,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonShowPayouts;
+        private System.Windows.Forms.Button buttonShowPolicies;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button buttonGetInsurence;
+        private System.Windows.Forms.Button button1;
     }
 }

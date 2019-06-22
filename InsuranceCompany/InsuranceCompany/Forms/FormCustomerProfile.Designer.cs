@@ -191,6 +191,7 @@
             this.ClientSize = new System.Drawing.Size(329, 319);
             this.Controls.Add(this.radioButtonEntity);
             this.Controls.Add(this.radioButtonIndivid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormCustomerProfile";
             this.Text = "Form3";
             this.ResumeLayout(false);

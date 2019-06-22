@@ -12,17 +12,16 @@ namespace InsuranceCompany.Forms
 {
     public partial class FormAddNewCategory : Form
     {
-        Dictionary<Category, List<Subcategory>> dicCategory;
-
-        public FormAddNewCategory(Dictionary<Category, List<Subcategory>> dicCategory)
+        FormAllClients main;
+        public FormAddNewCategory(FormAllClients main)
         {
-            this.dicCategory = dicCategory;
+            this.main = main;
             InitializeComponent();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            dicCategory.Add(new Category(textBoxCategory.Text), new List<Subcategory>());
+            main.dicCategory.Add(new Category(textBoxCategory.Text), new List<Subcategory>());
             this.Close();
         }
     }

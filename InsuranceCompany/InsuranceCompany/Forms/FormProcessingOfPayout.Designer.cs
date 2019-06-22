@@ -164,6 +164,7 @@
             this.Controls.Add(this.comboBoxClient);
             this.Controls.Add(this.labelClient);
             this.Controls.Add(this.buttonAccept);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormProcessingOfPayout";
             this.Text = "FormRegistrationOfPayment";
             this.ResumeLayout(false);

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.labelCategory = new System.Windows.Forms.Label();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelCategory
@@ -42,31 +42,32 @@
             this.labelCategory.TabIndex = 0;
             this.labelCategory.Text = "Категория";
             // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(126, 22);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCategory.TabIndex = 1;
-            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(68, 84);
+            this.buttonAdd.Location = new System.Drawing.Point(79, 74);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(90, 44);
+            this.buttonAdd.Size = new System.Drawing.Size(90, 24);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.Location = new System.Drawing.Point(121, 19);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCategory.TabIndex = 3;
+            // 
             // FormAddNewCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 162);
-            this.Controls.Add(this.buttonAdd);
+            this.ClientSize = new System.Drawing.Size(249, 107);
             this.Controls.Add(this.textBoxCategory);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.labelCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormAddNewCategory";
             this.Text = "FormAddNewCategoryes";
             this.ResumeLayout(false);
@@ -77,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelCategory;
-        private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBoxCategory;
     }
 }

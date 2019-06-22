@@ -35,6 +35,7 @@
             this.buttonAddNewSubcategory = new System.Windows.Forms.Button();
             this.buttonRegistrationAppeal = new System.Windows.Forms.Button();
             this.buttonRegistrationOfPayment = new System.Windows.Forms.Button();
+            this.buttonListCategories = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -108,11 +109,22 @@
             this.buttonRegistrationOfPayment.UseVisualStyleBackColor = true;
             this.buttonRegistrationOfPayment.Click += new System.EventHandler(this.buttonRegistrationOfPayment_Click);
             // 
+            // buttonListCategories
+            // 
+            this.buttonListCategories.Location = new System.Drawing.Point(473, 121);
+            this.buttonListCategories.Name = "buttonListCategories";
+            this.buttonListCategories.Size = new System.Drawing.Size(144, 23);
+            this.buttonListCategories.TabIndex = 7;
+            this.buttonListCategories.Text = "Список категорий";
+            this.buttonListCategories.UseVisualStyleBackColor = true;
+            this.buttonListCategories.Click += new System.EventHandler(this.buttonListCategories_Click);
+            // 
             // FormAllClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 376);
+            this.Controls.Add(this.buttonListCategories);
             this.Controls.Add(this.buttonRegistrationOfPayment);
             this.Controls.Add(this.buttonRegistrationAppeal);
             this.Controls.Add(this.buttonAddNewSubcategory);
@@ -120,6 +132,7 @@
             this.Controls.Add(this.buttonAddNewCategory);
             this.Controls.Add(this.buttonGetIncurence);
             this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormAllClients";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -134,6 +147,7 @@
         private System.Windows.Forms.Button buttonRegistrationAppeal;
         private System.Windows.Forms.Button buttonRegistrationOfPayment;
         protected internal System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button buttonListCategories;
     }
 }
 

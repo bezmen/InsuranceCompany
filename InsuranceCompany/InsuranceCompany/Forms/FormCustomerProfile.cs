@@ -12,20 +12,15 @@ namespace InsuranceCompany.Forms
 {
     public partial class FormCustomerProfile : Form
     {
-        List<Client> clients;
-        List<Employee> employees;
         FormAllClients main;
-        Dictionary<Category, List<Subcategory>> dicCategoryes;
+
         // сумма полиса - это сумма на которую тебя страхуют
         // стоиомсть полиса - взносы в раз год
         // взносы примерно будут по 10% от суммы полиса
-        public FormCustomerProfile(List<Client> clients, List<Employee> employees, FormAllClients main, Dictionary<Category, List<Subcategory>> dicCategoreyes)
+        public FormCustomerProfile(FormAllClients main)
         {
             InitializeComponent();
-            this.clients = clients;
-            this.employees = employees;
             this.main = main;
-            this.dicCategoryes = dicCategoreyes;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -228,7 +223,7 @@ namespace InsuranceCompany.Forms
                 this.labelUTN.Name = "labelUTN";
                 this.labelUTN.Size = new System.Drawing.Size(31, 13);
                 this.labelUTN.TabIndex = 4;
-                this.labelUTN.Text = "УНН";
+                this.labelUTN.Text = "УНП";
                 // 
                 // textBoxUTN
                 // 
@@ -333,6 +328,8 @@ namespace InsuranceCompany.Forms
             this.Controls.Remove(textBoxTelephone);
             this.Controls.Remove(checkBoxFemale);
             this.Controls.Remove(checkBoxMale);
+            this.Controls.Remove(textBox1UTN);
+            this.Controls.Remove(label1Utn);
         }
 
         private void removeEntityComponents()
@@ -364,14 +361,16 @@ namespace InsuranceCompany.Forms
             {
                 IndividualClient client = new IndividualClient(
                     textBoxFIO.Text,
+                    textBox1UTN.Text,
                     dateTimePickerBirthday.Value,
                     checkBoxMale.Checked,
-                    textBox1UTN.Text,
                     Convert.ToInt32(textBoxStoolDryving.Text),
                     textBoxAddress.Text,
                     textBoxTelephone.Text
                     );
-                clients.Add(client);
+                main.clients.Add(client);
+                FormPolicy startForm = new FormPolicy(client, main);
+                startForm.Show();
             }
             else
             {
@@ -383,10 +382,10 @@ namespace InsuranceCompany.Forms
                     textBoxAddres.Text,
                     textBoxTelephon.Text
                     );
-                clients.Add(client);
+                main.clients.Add(client);
+                FormPolicy startForm = new FormPolicy(client, main);
+                startForm.Show();
             }
-            FormPolicy startForm = new FormPolicy(clients, employees, main, dicCategoryes);
-            startForm.Show();
             this.Close();
         }
     }

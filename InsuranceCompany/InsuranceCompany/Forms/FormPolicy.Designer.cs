@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 362);
+            this.ClientSize = new System.Drawing.Size(396, 362);
             this.Controls.Add(this.comboBoxTerm);
             this.Controls.Add(this.comboBoxPaymentTerm);
             this.Controls.Add(this.buttonConclude);
@@ -232,6 +232,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNumPolicy);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormPolicy";
             this.Text = "Form2";
             this.ResumeLayout(false);

@@ -15,14 +15,18 @@ namespace InsuranceCompany
         public List<Payout> Payouts { get; set; }
         public decimal SumPayouts { get; set; }
         public string UTN { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
 
-        public Client(string UTN)
+        public Client(string UTN, string name, string address)
         {
             Policies = new List<IncurencePolicy>();
             Appeals = new List<Appeal>();
             Payouts = new List<Payout>();
             SumPayouts = 0;
             this.UTN = UTN;
+            this.Name = name;
+            this.Address = address;
         }
     }
 }

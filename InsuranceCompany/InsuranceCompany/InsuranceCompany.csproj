@@ -98,6 +98,12 @@
     <Compile Include="Forms\FormProcessingOfPayout.Designer.cs">
       <DependentUpon>FormProcessingOfPayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormShowAllCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormShowAllCategories.Designer.cs">
+      <DependentUpon>FormShowAllCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="IndividualClient.cs" />
     <Compile Include="Forms\FormAllClients.cs">
       <SubType>Form</SubType>
@@ -109,6 +115,7 @@
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Payout.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Subcategory.cs" />
     <EmbeddedResource Include="Forms\FormAddNewCategory.resx">
       <DependentUpon>FormAddNewCategory.cs</DependentUpon>
@@ -137,6 +144,9 @@
     <EmbeddedResource Include="Forms\FormProcessingOfPayout.resx">
       <DependentUpon>FormProcessingOfPayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormShowAllCategories.resx">
+      <DependentUpon>FormShowAllCategories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,7 +57,7 @@
             this.buttonGetIncurence.TabIndex = 1;
             this.buttonGetIncurence.Text = "Оформить полис";
             this.buttonGetIncurence.UseVisualStyleBackColor = true;
-            this.buttonGetIncurence.Click += new System.EventHandler(this.button1_Click);
+            this.buttonGetIncurence.Click += new System.EventHandler(this.buttonGetIncurency_Click);
             // 
             // buttonAddNewCategory
             // 

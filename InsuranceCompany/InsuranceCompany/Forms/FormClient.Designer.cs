@@ -32,7 +32,7 @@
             this.buttonShowPolicies = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.buttonGetInsurence = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonShowPayouts
@@ -74,21 +74,22 @@
             this.buttonGetInsurence.UseVisualStyleBackColor = true;
             this.buttonGetInsurence.Click += new System.EventHandler(this.buttonGetInsurence_Click);
             // 
-            // button1
+            // buttonExport
             // 
-            this.button1.Location = new System.Drawing.Point(203, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Экспорт";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonExport.Location = new System.Drawing.Point(203, 261);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(103, 23);
+            this.buttonExport.TabIndex = 4;
+            this.buttonExport.Text = "Экспорт";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 340);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.buttonGetInsurence);
             this.Controls.Add(this.buttonShowPolicies);
             this.Controls.Add(this.buttonShowPayouts);
@@ -106,6 +107,6 @@
         private System.Windows.Forms.Button buttonShowPolicies;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button buttonGetInsurence;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonExport;
     }
 }

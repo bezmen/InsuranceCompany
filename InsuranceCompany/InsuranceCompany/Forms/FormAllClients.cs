@@ -31,7 +31,7 @@ namespace InsuranceCompany
             listView1.FullRowSelect = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonGetIncurency_Click(object sender, EventArgs e)
         {
             FormAllClients main = this;
             FormCustomerProfile startForm = new FormCustomerProfile(main);

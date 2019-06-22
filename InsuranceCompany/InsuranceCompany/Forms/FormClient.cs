@@ -7,15 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-/*      public int Number { get; set; }
-        public Employee Employee { get; set; }
-        public Category Category { get; set; }
-        public DateTime DateOfConclusion { get; set; }
-        public DateTime TermOfImprisonment { get; set; }
-        public decimal Sum { get; set; }
-        public decimal Cost { get; set; }
-        public int PaymentTerm { get; set; }*/
+using Word = Microsoft.Office.Interop.Word;
 
 namespace InsuranceCompany.Forms
 {
@@ -97,5 +89,13 @@ namespace InsuranceCompany.Forms
 
 
         private IncurencePolicy findSelectedPolicy(string number) => client.Policies.Find(k => k.Number.ToString().Equals(number));
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            var wordApp = new Word.Application();
+            wordApp.Visible = false;
+
+            var wordDocument = wordApp.Documents.Open("lol.docx");
+        }
     }
 }

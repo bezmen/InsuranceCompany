@@ -70,9 +70,9 @@
             this.labelCategory.AutoSize = true;
             this.labelCategory.Location = new System.Drawing.Point(8, 46);
             this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(63, 13);
+            this.labelCategory.Size = new System.Drawing.Size(60, 13);
             this.labelCategory.TabIndex = 4;
-            this.labelCategory.Text = "Категория ";
+            this.labelCategory.Text = "Категория";
             // 
             // comboBoxCategory
             // 

@@ -17,8 +17,9 @@ namespace InsuranceCompany
         public string UTN { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
+        public string Telephone { get; set; }
 
-        public Client(string UTN, string name, string address)
+        public Client(string UTN, string name, string address, string telephone)
         {
             Policies = new List<IncurencePolicy>();
             Appeals = new List<Appeal>();
@@ -27,6 +28,7 @@ namespace InsuranceCompany
             this.UTN = UTN;
             this.Name = name;
             this.Address = address;
+            this.Telephone = telephone;
         }
     }
 }

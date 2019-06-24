@@ -11,14 +11,12 @@ namespace InsuranceCompany
         public DateTime Birthday { get; }
         public bool Sex { get; }
         public int StoolDryving { get; }
-        public string NumberOfTelephone { get; }
 
-        public IndividualClient(string name, string UTN, DateTime birth, bool sex, int stoolDriv, string address, string number) : base(UTN, name, address)
+        public IndividualClient(string name, string UTN, DateTime birth, bool sex, int stoolDriv, string address, string telephone) : base(UTN, name, address, telephone)
         {
             Birthday = birth;
             Sex = sex;
             StoolDryving = stoolDriv;
-            NumberOfTelephone = number;
         }
 
         public override string ToString()

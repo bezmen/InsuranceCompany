@@ -30,7 +30,7 @@ namespace InsuranceCompany.Forms
             comboBoxAppeal.Items.Clear();
 
             var client = comboBoxClient.SelectedItem as Client;
-
+            
             foreach (var item in client.Appeals)
                 if (item.IsOppened == true)
                     comboBoxAppeal.Items.Add(item);
@@ -43,7 +43,7 @@ namespace InsuranceCompany.Forms
             textBoxSubcategory.Text = null;
             if (comboBoxAppeal.SelectedItem != null)
             {
-                textBoxCategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Category.Name;
+                textBoxCategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Policy.Category.Name;
                 textBoxSubcategory.Text = (comboBoxAppeal.SelectedItem as Appeal).Subcategory.Name;
             }
         }
@@ -51,13 +51,15 @@ namespace InsuranceCompany.Forms
         private void buttonAccept_Click(object sender, EventArgs e)
         {
             (comboBoxClient.SelectedItem as Client).Payouts.Add(new Payout(
-                (comboBoxAppeal.SelectedItem as Appeal).Category,
+                (comboBoxAppeal.SelectedItem as Appeal).Policy,
                 (comboBoxAppeal.SelectedItem as Appeal).Subcategory,
                 (comboBoxAppeal.SelectedItem as Appeal).DateOfAppeal,
                 DateTime.Now,
                 Convert.ToDecimal(textBoxSumPayout.Text)
                 ));
+
             (comboBoxClient.SelectedItem as Client).SumPayouts += Convert.ToDecimal(textBoxSumPayout.Text);
+            (comboBoxAppeal.SelectedItem as Appeal).Policy.SumPayouts += Convert.ToDecimal(textBoxSumPayout.Text);
 
             var idIdx = main.listView1.Columns[2].Index;
             var codeIdx = main.listView1.Columns[4].Index;

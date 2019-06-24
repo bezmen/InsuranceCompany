@@ -13,7 +13,6 @@ namespace InsuranceCompany.Forms
     public partial class FormAddNewSubcategoty : Form
     {
         Dictionary<Category, List<Subcategory>> dicCategory;
-
         public FormAddNewSubcategoty(Dictionary<Category, List<Subcategory>> dicCategory)
         {
             this.dicCategory = dicCategory;

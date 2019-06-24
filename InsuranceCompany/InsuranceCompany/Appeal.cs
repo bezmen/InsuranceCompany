@@ -16,16 +16,16 @@ namespace InsuranceCompany
             Waiting
         }
         public Client Client { get; }
-        public Category Category { get; }
+        public IncurencePolicy Policy { get; }
         public Subcategory Subcategory { get; }
         public DateTime DateOfAppeal { get; }
         public bool IsOppened { get; set; } // if State = true -> Appeal is opened
         public StateAppeal State { get; set; }
 
-        public Appeal(DateTime dateOfAppeal, Client client, Category category, Subcategory subcategory)
+        public Appeal(DateTime dateOfAppeal, Client client, IncurencePolicy policy, Subcategory subcategory)
         {
             Client = client;
-            Category = category;
+            Policy = policy;
             Subcategory =  subcategory;
             DateOfAppeal = dateOfAppeal;
             State = StateAppeal.Waiting;
@@ -34,7 +34,7 @@ namespace InsuranceCompany
 
         public override string ToString()
         {
-            return string.Format("{0}({1}) {2}", Category.Name, Subcategory.Name, DateOfAppeal.ToShortDateString());
+            return string.Format("{0}({1}) {2}", Policy.Category.Name, Subcategory.Name, DateOfAppeal.ToShortDateString());
         }
     }
 }

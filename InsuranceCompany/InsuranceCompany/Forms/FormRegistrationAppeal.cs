@@ -30,7 +30,7 @@ namespace InsuranceCompany.Forms
             (comboBoxClient.SelectedItem as Client).Appeals.Add(new Appeal(
                 DateTime.Now,
                 comboBoxClient.SelectedItem as Client,
-                comboBoxCategory.SelectedItem as Category,
+                comboBoxCategory.SelectedItem as IncurencePolicy,
                 comboBoxSubcategory.SelectedItem as Subcategory));
 
             (comboBoxClient.SelectedItem as Client).Appeals.Last().IsOppened = true;
@@ -43,15 +43,16 @@ namespace InsuranceCompany.Forms
             comboBoxCategory.SelectedItem = null;
             comboBoxCategory.Items.Clear();
             foreach (var item in (comboBoxClient.SelectedItem as Client).Policies)
-                comboBoxCategory.Items.Add(item.Category);
+                comboBoxCategory.Items.Add(item);
         }
 
         private void comboBoxСategory_SelectedValueChanged(object sender, EventArgs e)
         {
             comboBoxSubcategory.SelectedItem = null;
             comboBoxSubcategory.Items.Clear();
-            for (int i = 0; i < dicCategory[(Category)comboBoxCategory.SelectedItem].Count; i++)
-                comboBoxSubcategory.Items.Add(dicCategory[comboBoxCategory.SelectedItem as Category][i]);
+            var selectedCategory = (comboBoxCategory.SelectedItem as IncurencePolicy).Category;
+            for (int i = 0; i < dicCategory[selectedCategory].Count; i++)
+                comboBoxSubcategory.Items.Add(dicCategory[selectedCategory][i]);
         }
     }
 }

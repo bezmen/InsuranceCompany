@@ -8,19 +8,19 @@ namespace InsuranceCompany
 {
     public class Payout
     {
-        public Category Category { get; }
+        public IncurencePolicy Policy { get; }
         public Subcategory Subcategory { get; }
         public DateTime DateOfAppeal { get; set; }
         public DateTime DateOfPayout { get; }
-        public decimal SumPayout { get; set; }
+        public decimal _Payout { get; set; }
 
-        public Payout(Category category, Subcategory subcategory, DateTime dateOfAppeal, DateTime dateOfPayout, decimal sumPayout)
+        public Payout(IncurencePolicy policy, Subcategory subcategory, DateTime dateOfAppeal, DateTime dateOfPayout, decimal payout)
         {
-            Category = category;
+            Policy = policy;
             Subcategory = subcategory;
             DateOfAppeal = dateOfAppeal;
             DateOfPayout = dateOfPayout;
-            SumPayout = sumPayout;
+            _Payout = payout;
         }
     }
 }

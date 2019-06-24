@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Word = Microsoft.Office.Interop.Word;
+using Microsoft.Office.Interop.Word;
 
 namespace InsuranceCompany.Forms
 {
@@ -61,11 +61,11 @@ namespace InsuranceCompany.Forms
 
             foreach (var payout in client.Payouts)
             {
-                item = new ListViewItem(payout.Category.Name, 0);
+                item = new ListViewItem(payout.Policy.Category.Name, 0);
                 item.SubItems.Add(payout.Subcategory.Name);
                 item.SubItems.Add(payout.DateOfAppeal.ToShortDateString());
                 item.SubItems.Add(payout.DateOfPayout.ToShortDateString());
-                item.SubItems.Add(payout.SumPayout.ToString());
+                item.SubItems.Add(payout._Payout.ToString());
                 listView1.Items.Add(item);
             }
         }
@@ -92,10 +92,90 @@ namespace InsuranceCompany.Forms
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            var wordApp = new Word.Application();
-            wordApp.Visible = false;
+            Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
+            Document doc = app.Documents.Add(Visible: true);
+            Range range = doc.Range();
+            Table table = doc.Tables.Add(range, 9, 6);
+            table.Borders.Enable = 1;
 
-            var wordDocument = wordApp.Documents.Open("lol.docx");
+            table.Cell(1, 1).Range.Text = "Клиент:";
+            table.Cell(2, 1).Range.Text = "УНП:";
+            table.Cell(3, 1).Range.Text = "Адрес:";
+            table.Cell(4, 1).Range.Text = "Телефон:";
+            table.Cell(5, 1).Range.Text = "Тип:";
+            table.Cell(6, 1).Range.Text = "Руководитель";
+            table.Cell(7, 1).Range.Text = "Главбух:";
+
+            table.Cell(8, 1).Range.Text = "Дата полиса";
+            table.Cell(8, 2).Range.Text = "Категория полиса";
+            table.Cell(8, 3).Range.Text = "Действует до";
+            table.Cell(8, 4).Range.Text = "Cумма полиса, руб";
+            table.Cell(8, 5).Range.Text = "Стоимость полиса, руб";
+            table.Cell(8, 6).Range.Text = "Cуммарные выплаты, руб";
+
+            table.Cell(1, 2).Range.Text = client.Name;
+            table.Cell(2, 2).Range.Text = client.UTN;
+            table.Cell(3, 2).Range.Text = client.Address;
+            table.Cell(4, 2).Range.Text = client.Telephone;
+            table.Cell(5, 2).Range.Text = (client is IndividualClient) ? "Физическое лицо" : "Юридическое лицо";
+            table.Cell(6, 2).Range.Text = (client is IndividualClient) ? "" : (client as EntityClient).FIO_Director;
+            table.Cell(7, 2).Range.Text = (client is IndividualClient) ? "" : (client as EntityClient).FIO_ChiefAccountant;
+
+            foreach (var policy in client.Policies)
+            {
+                foreach (Row row in table.Rows)
+                {
+                    if (row.Index > 8)
+                    {
+                        table.Rows.Add();
+                        foreach (Cell cell in row.Cells)
+                        {
+                            switch (cell.ColumnIndex)
+                            {
+                                case 1:
+                                    cell.Range.Text = policy.DateOfConclusion.ToShortDateString();
+                                    break;
+                                case 2:
+                                    cell.Range.Text = policy.Category.Name;
+                                    break;
+                                case 3:
+                                    cell.Range.Text = policy.TermOfImprisonment.ToShortDateString();
+                                    break;
+                                case 4:
+                                    cell.Range.Text = policy.Sum.ToString();
+                                    break;
+                                case 5:
+                                    cell.Range.Text = policy.Cost.ToString();
+                                    break;
+                                case 6:
+                                    cell.Range.Text = policy.SumPayouts.ToString();
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+
+            int lastRow = table.Rows.Count;
+            decimal sumSumPolicies = 0;
+            decimal sumCostPolicies = 0;
+            decimal sumPayouts = client.SumPayouts;
+            foreach (var policy in client.Policies)
+            {
+                sumSumPolicies += policy.Sum;
+                sumCostPolicies += policy.Cost;
+            }
+
+            table.Cell(lastRow, 1).Range.Text = "ИТОГО";
+            table.Cell(lastRow, 4).Range.Text = sumSumPolicies.ToString();
+            table.Cell(lastRow, 5).Range.Text = sumCostPolicies.ToString();
+            table.Cell(lastRow, 6).Range.Text = sumPayouts.ToString();
+
+            doc.Save();
+            app.Quit();
         }
     }
 }

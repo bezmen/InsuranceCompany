@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class EntityClient : Client
     {
         public string FIO_Director { get; }

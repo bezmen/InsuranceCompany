@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class Client
     {
         public List<IncurencePolicy> Policies { get; set; }

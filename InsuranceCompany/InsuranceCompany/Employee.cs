@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class Employee
     {
         public string FullName { get; }

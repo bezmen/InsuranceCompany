@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class IndividualClient : Client
     {
         public DateTime Birthday { get; }

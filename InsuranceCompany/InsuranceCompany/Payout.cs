@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class Payout
     {
         public IncurencePolicy Policy { get; }

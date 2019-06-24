@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
-    
+    [Serializable]
     public class Appeal
     {
         public enum StateAppeal

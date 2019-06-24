@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsuranceCompany
 {
+    [Serializable]
     public class Category
     {
         public string Name { get; }

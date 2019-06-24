@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,19 @@ namespace InsuranceCompany
 
         public FormAllClients()
         {
+            //TODO: здесь десиреализовать объект и приравнять все списки его спискам
+            BinaryFormatter formatter = new BinaryFormatter();
+            if (File.Exists("save.dat"))
+            {
+                using (FileStream data = new FileStream("save.dat", FileMode.OpenOrCreate))
+                {
+                    Session newSession = (Session)formatter.Deserialize(data);
+                    dicCategory = newSession.dicCategory;
+                    clients = newSession.clients;
+                    employees = newSession.employees;
+                    countPolycies = newSession.countPolycies;
+                }
+            }
             InitializeComponent();
             dicCategory.Add(new Category("КАСКО"), new List<Subcategory>() { new Subcategory("item1", 2), new Subcategory("item2", 3) });
             employees.Add(new Employee("Безмен А. Л.", "ул. Чапаева 41-2", "+375333539190"));
@@ -28,6 +43,16 @@ namespace InsuranceCompany
             listView1.Columns.Add("УНП", -10, HorizontalAlignment.Center);
             listView1.Columns.Add("Адрес", -10, HorizontalAlignment.Center);
             listView1.Columns.Add("Суммарные выплаты", -2, HorizontalAlignment.Left);
+            foreach (Client client in clients)
+            {
+                ListViewItem item = new ListViewItem(client.Name.ToString(), 0);
+                item.SubItems.Add((client is IndividualClient) ? "физ.лицо" : "юр.лицо");
+                item.SubItems.Add(client.UTN.ToString());
+                item.SubItems.Add(client.Address.ToString());
+                item.SubItems.Add(client.SumPayouts.ToString());
+                listView1.Items.Add(item);
+            }
+
             listView1.FullRowSelect = true;
         }
 
@@ -93,6 +118,18 @@ namespace InsuranceCompany
             startForm.Show();
         }
 
-        private Client findSelectedClient(string UTN) => clients.Find(k => k.UTN.Equals(UTN)); 
+        private Client findSelectedClient(string UTN) => clients.Find(k => k.UTN.Equals(UTN));
+
+        private void FormAllClients_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //TODO: сериалисовать объект Session и приравнять все списки в его конструктор
+            string nowDate = DateTime.Now.ToShortDateString();
+            Session session = new Session(employees, clients, dicCategory, countPolycies);
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream data = new FileStream(string.Format("save.dat", nowDate), FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(data, session);
+            }
+        }
     }
 }

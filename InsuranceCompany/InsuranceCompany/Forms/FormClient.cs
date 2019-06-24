@@ -120,12 +120,12 @@ namespace InsuranceCompany.Forms
             table.Cell(5, 2).Range.Text = (client is IndividualClient) ? "Физическое лицо" : "Юридическое лицо";
             table.Cell(6, 2).Range.Text = (client is IndividualClient) ? "" : (client as EntityClient).FIO_Director;
             table.Cell(7, 2).Range.Text = (client is IndividualClient) ? "" : (client as EntityClient).FIO_ChiefAccountant;
-
+            int i = 8;
             foreach (var policy in client.Policies)
             {
                 foreach (Row row in table.Rows)
                 {
-                    if (row.Index > 8)
+                    if (row.Index > i)
                     {
                         table.Rows.Add();
                         foreach (Cell cell in row.Cells)
@@ -154,6 +154,7 @@ namespace InsuranceCompany.Forms
                                     break;
                             }
                         }
+                        i++;
                         break;
                     }
                 }
@@ -168,12 +169,18 @@ namespace InsuranceCompany.Forms
                 sumSumPolicies += policy.Sum;
                 sumCostPolicies += policy.Cost;
             }
-
+            table.Rows.Add();
             table.Cell(lastRow, 1).Range.Text = "ИТОГО";
             table.Cell(lastRow, 4).Range.Text = sumSumPolicies.ToString();
             table.Cell(lastRow, 5).Range.Text = sumCostPolicies.ToString();
             table.Cell(lastRow, 6).Range.Text = sumPayouts.ToString();
 
+            for (int j = 1; j <= 7; j++)
+            {
+                doc.Range(table.Rows[j].Cells[2].Range.Start, table.Rows[j].Cells[6].Range.End).Cells.Merge();
+            }
+
+            doc.Range(table.Rows[lastRow].Cells[1].Range.Start, table.Rows[lastRow].Cells[3].Range.End).Cells.Merge();
             doc.Save();
             app.Quit();
         }

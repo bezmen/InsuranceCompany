@@ -93,8 +93,6 @@ namespace InsuranceCompany
             startForm.Show();
         }
 
-        private Client findSelectedClient(string UTN) => clients.Find(k => k.UTN.Equals(UTN));
-
-        
+        private Client findSelectedClient(string UTN) => clients.Find(k => k.UTN.Equals(UTN)); 
     }
 }

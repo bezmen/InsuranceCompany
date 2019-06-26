@@ -36,8 +36,6 @@ namespace InsuranceCompany
                 }
             }
             InitializeComponent();
-            dicCategory.Add(new Category("КАСКО"), new List<Subcategory>() { new Subcategory("item1", 2), new Subcategory("item2", 3) });
-            employees.Add(new Employee("Безмен А. Л.", "ул. Чапаева 41-2", "+375333539190"));
             listView1.Columns.Add("Клиент", -10, HorizontalAlignment.Left);
             listView1.Columns.Add("Тип", -10, HorizontalAlignment.Center);
             listView1.Columns.Add("УНП", -10, HorizontalAlignment.Center);

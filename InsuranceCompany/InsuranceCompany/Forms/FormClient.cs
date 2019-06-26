@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 
@@ -37,7 +31,7 @@ namespace InsuranceCompany.Forms
             listView1.Columns.Add("Срок выплаты(дн.)", -2, HorizontalAlignment.Left);
             foreach (var policy in client.Policies)
             {
-                
+
                 item = new ListViewItem(policy.Number.ToString(), 0);
                 item.SubItems.Add(policy.Category.Name);
                 item.SubItems.Add(policy.DateOfConclusion.ToShortDateString());
@@ -167,22 +161,21 @@ namespace InsuranceCompany.Forms
             foreach (var policy in client.Policies)
             {
                 sumSumPolicies += policy.Sum;
-                sumCostPolicies += policy.Cost;
-            }
-            table.Rows.Add();
-            table.Cell(lastRow, 1).Range.Text = "ИТОГО";
-            table.Cell(lastRow, 4).Range.Text = sumSumPolicies.ToString();
-            table.Cell(lastRow, 5).Range.Text = sumCostPolicies.ToString();
-            table.Cell(lastRow, 6).Range.Text = sumPayouts.ToString();
+                table.Rows.Add();
+                table.Cell(lastRow, 1).Range.Text = "ИТОГО";
+                table.Cell(lastRow, 4).Range.Text = sumSumPolicies.ToString();
+                table.Cell(lastRow, 5).Range.Text = sumCostPolicies.ToString();
+                table.Cell(lastRow, 6).Range.Text = sumPayouts.ToString();
 
-            for (int j = 1; j <= 7; j++)
-            {
-                doc.Range(table.Rows[j].Cells[2].Range.Start, table.Rows[j].Cells[6].Range.End).Cells.Merge();
-            }
+                for (int j = 1; j <= 7; j++)
+                {
+                    doc.Range(table.Rows[j].Cells[2].Range.Start, table.Rows[j].Cells[6].Range.End).Cells.Merge();
+                }
 
-            doc.Range(table.Rows[lastRow].Cells[1].Range.Start, table.Rows[lastRow].Cells[3].Range.End).Cells.Merge();
-            doc.Save();
-            app.Quit();
+                doc.Range(table.Rows[lastRow].Cells[1].Range.Start, table.Rows[lastRow].Cells[3].Range.End).Cells.Merge();
+                doc.Save();
+                app.Quit();
+            }
         }
     }
 }
